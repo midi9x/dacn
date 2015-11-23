@@ -1,0 +1,43 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Quản trị</title>
+<link rel="stylesheet" type="text/css" href="{$config.url}templates/css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="{$config.url}templates/css/bootstrap-theme.min.css">
+<script src="{$config.url}templates/js/jquery-1.11.3.min.js"></script>
+<script src="{$config.url}templates/js/bootstrap.min.js"></script>
+</head>
+<body>
+<nav class="navbar navbar-inverse">
+    <ul class="nav navbar-nav">
+        <li><a href="index.php"><span class="glyphicon glyphicon-home"></span> Trang chủ</a> </li>
+        <li role="presentation" class="dropdown">
+            <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-th-large"></span> Danh mục <span class="caret"></span>
+            </a>
+            <ul class="dropdown-menu">
+                <li><a href="index.php">Danh mục sản phẩm</a> </li>
+                <li><a href="index.php">Danh mục tin tức</a> </li>
+            </ul>
+          </li>
+         <li role="presentation" class="dropdown">
+            <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-book"></span> Nội dung <span class="caret"></span>
+            </a>
+            <ul class="dropdown-menu">
+                <li><a href="index.php?prog=product">Quản lý sản phẩm</a> </li>
+                <li><a href="index.php?prog=news">Quản lý tin tức</a> </li>
+            </ul>
+          </li>
+        <li><a href="index.php?prog=account"><span class="glyphicon glyphicon-user"></span> Tài khoản</a> </li>
+        <li><a href="index.php?prog=order"><span class="glyphicon glyphicon-hdd"></span> Hóa đơn</a> </li>
+        <li><a href="index.php?prog=adv"><span class="glyphicon glyphicon-eye-open"></span> Quảng cáo</a> </li>
+        <li><a href="index.php?prog=contact"><span class="glyphicon glyphicon-envelope"></span> Liên hệ</a> </li>
+    </ul>
+</nav>
+
+<div class="container-fluid">
+    {include file=$prog|cat:'.html' }
+</div>
+
+</body>
+</html>

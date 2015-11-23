@@ -1,0 +1,189 @@
+<!-- breadcrumbs -->
+<div class="breadcrumbs">
+	<div class="container">
+		<div class="row">
+			<ul>
+				<li class="home"> <a href="index.html" title="Trang chủ">Trang chủ</a><span>/</span></li>
+				<li class=""> <a href="#" title="loại sp">Loại SP</a><span>/</span></li>
+				<li class="category13"><strong> Tên sp </strong></li>
+			</ul>
+		</div>
+	</div>
+</div>
+<!-- end breadcrumbs --> 
+<!-- main-container -->
+<section class="main-container col1-layout">
+	<div class="main container">
+		{if isset($chitiet) && $chitiet}
+		<div class="col-main">
+			<div class="row">
+				<div class="product-view wow">
+					<div class="product-essential">
+						<form action="#" method="post" id="product_addtocart_form">
+							<div class="product-img-box col-lg-6 col-sm-6 col-xs-12">
+								<ul class="moreview" id="moreview">
+									{foreach from=$hinhanh item=elem}
+									{foreach from=$elem item=it}
+									<li class="moreview_thumb"> <img class="moreview_thumb_image" src="{$it}"> <img class="moreview_source_image" src="{$it}" alt=""> <span class="roll-over"></span> <img style="position: absolute;" class="zoomImg" src="{$it}"></li>
+									{/foreach}
+									{/foreach}
+								<!-- 		
+									<li class="moreview_thumb thumb_2 moreview_thumb_active"> <img class="moreview_thumb_image" src="{$it}"> <img class="moreview_source_image" src="{$it}" alt=""> <span class="roll-over">Roll over image to zoom in</span> <img style="position: absolute;" class="zoomImg" src="{$it}"></li>
+									<li class="moreview_thumb thumb_3"> <img class="moreview_thumb_image" src="{$it}"> <img class="moreview_source_image" src="{$it}" alt=""> <span class="roll-over">Roll over image to zoom in</span> <img style="position: absolute;" class="zoomImg" src="{$it}"></li> -->
+
+								</ul>
+								<div class="moreview-control"> <a style="right: 42px;" href="javascript:void(0)" class="moreview-prev"></a> <a style="right: 42px;" href="javascript:void(0)" class="moreview-next"></a> </div>
+							</div>
+
+							<!-- end: more-images -->
+
+							<div class="product-shop col-lg-6 col-sm-6 col-xs-12">
+								<div class="product-name">
+									<h1>{$chitiet.tenSP}</h1>
+								</div>
+								<div class="ratings">
+									social button
+								</div>
+								<p class="availability in-stock">
+									<span>
+										{if  $chitiet.soLuong!=0}
+										Còn hàng
+										{else}
+										Ngừng kinh doanh
+										{/if}
+									</span>
+								</p>
+								<div class="price-block">
+									<div class="price-box">
+										<p class="special-price"> <span class="price-label">Giá bán: </span> <span class="price"> {$chitiet.donGia|number_format} VNĐ </span> </p>
+
+									</div>
+								</div>
+								<div class="short-description">
+									<h2>Mô tả tổng quan</h2>
+									<!-- lấy dòng đầu tiên của thẻ <p> -->
+									{$mt = explode('</p>', $chitiet.moTa)}
+									{$mt[0]}
+									<!-- end -->
+									{if  $chitiet.chatLieu!=''}
+									<p>Chất liệu: {$chitiet.chatLieu}</p>
+									{/if}
+
+									{if $chitiet.kichThuoc!=''}
+									<p>Kích thước: {$chitiet.kichThuoc}</p>
+									{/if}
+
+									{if $chitiet.xuatXu!=''}
+									<p>Xuất xứ: {$chitiet.xuatXu}</p>
+									{/if}
+
+									{if $chitiet.mauSon!=''}
+									<p>Màu sưn: {$chitiet.mauSon}</p>
+									{/if}
+
+								</div>
+								<div class="add-to-box">
+									<div class="add-to-cart">
+										<label for="qty">Số lượng:</label>
+										<div class="pull-left">
+											<div class="custom pull-left">
+												<button onClick="var result = document.getElementById('qty'); var qty = result.value; if( !isNaN( qty ) &amp;&amp; qty &gt; 1 ) result.value--;return false;" class="reduced items-count" type="button"><i class="icon-minus">&nbsp;</i></button>
+												
+												<input type="text" class="input-text qty" title="Số lượng" value="1" maxlength="12" id="qty" name="qty">
+												<button onClick="var result = document.getElementById('qty'); var qty = result.value; if( !isNaN( qty )) result.value++;return false;" class="increase items-count" type="button"><i class="icon-plus">&nbsp;</i></button>
+											</div>
+										</div>
+										<button onClick="productAddToCartForm.submit(this)" class="button btn-cart" title="Thêm vào giỏ" type="button"><span><i class="icon-basket"></i>Thêm vào giỏ</span></button>
+									</div>
+								</div>
+							</form>
+						</div>
+						<div class="product-collateral">
+							<div class="col-sm-12 wow">
+								<ul id="product-detail-tab" class="nav nav-tabs product-tabs">
+									<li class="active"> <a href="#product_tabs_description" data-toggle="tab"> Mô tả sản phẩm </a> </li>
+									<li> <a href="#reviews_tabs" data-toggle="tab">Nhận xét - đánh giá</a> </li>
+									
+								</ul>
+								<div id="productTabContent" class="tab-content">
+									<div class="tab-pane fade in active" id="product_tabs_description">
+										<div class="std">
+											<p>
+												{$chitiet.moTa}
+											</p>
+										</div>
+									</div>
+									<div class="tab-pane fade" id="reviews_tabs">
+										<div class="box-collateral box-reviews" id="customer-reviews">
+											Nhân xét đánh giá
+										</div>
+									</div>
+									<div class="clear"></div>
+								</div>
+							</div>
+							<div class="col-sm-12">
+								<div class="box-additional">
+									<div class="related-pro wow">
+										<div class="slider-items-products">
+											<div class="new_title center">
+												<h2>Sản phẩm mởi</h2>
+											</div>
+											<div id="related-products-slider" class="product-flexslider hidden-buttons">
+												<div class="slider-items slider-width-col4"> 
+													{foreach $spmoi as $sp}
+													<!-- Item -->
+													<div class="item">
+														<div class="col-item">
+															<div class="sale-label sale-top-right">NEW</div>
+															<div class="images-container"> <a class="product-image" title="{$sp.tenSP}" href="{$model->alias($sp.tenSP)}_{$sp.id}.html"> <img style="width:270px;height:328px;" src="{$sp.hinhAnh}" class="img-responsive" alt="{$sp.tenSP}" /> </a></a>
+																<div class="actions">
+																	<div class="actions-inner">
+																		<button type="button" title="Thêm vào giở" class="button btn-cart"><span>Thêm vào giỏ</span></button>
+																		<ul class="add-to-links">
+																			<li><a title="" class="link-wishlist" href="{$model->alias($sp.tenSP)}_{$sp.id}.html"><span></span></a></li>
+																			<li><a title="" class="link-compare" href="{$model->alias($sp.tenSP)}_{$sp.id}.html"><span></span></a></li>
+																		</ul>
+																	</div>
+																</div>
+																<div class="qv-button-container"> <a class="qv-e-button btn-quickview-1" href="{$model->alias($sp.tenSP)}_{$sp.id}.html"><span><span></span></span></a> </div>
+															</div>
+															<div class="info">
+																<div class="info-inner">
+																	<div class="item-title"> <a href="{$model->alias($sp.tenSP)}_{$sp.id}.html" title="{$sp.tenSP}"> {$sp.tenSP} </a> </div>
+																	<!--item-title-->
+																	<div class="item-content">
+																		<div class="ratings">
+																			<div class="rating-box">
+																				<div style="width:60%" class="rating"></div>
+																			</div>
+																		</div>
+																		<div class="price-box">
+																			<p class="special-price"> <span class="price"> {$sp.donGia|number_format} VND</span> </p>
+																		</div>
+																	</div>
+																	<!--item-content--> 
+																</div>
+																<!--info-inner--> 
+
+																<!--actions-->
+
+																<div class="clearfix"> </div>
+															</div>
+														</div>
+													</div>
+													<!-- End Item --> 
+													{/foreach}
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				{/if}
+			</div>
+		</div>
+	</section>
+	<!--End main-container --> 

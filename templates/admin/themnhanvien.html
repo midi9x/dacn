@@ -1,0 +1,79 @@
+<div class="row">
+    <div class="col-lg-12">
+        <h3>
+            <ol class="breadcrumb">
+                <li>
+                    <i class="fa fa-home"></i>  <a href="{$config.url}admin/index.php">Home</a>
+                </li>
+                <li class="active">
+                    <i class="fa fa-plus"></i> Thêm mới nhân viên
+                </li>
+            </ol>
+        </h3>
+    </div>
+</div>
+<!-- /.row -->
+<form method="POST" action="{$link}" class="form-horizontal" enctype="multipart/form-data">
+  <div class="form-group">
+    <label for="tenDN" class="col-sm-2 control-label">Tên đăng nhập <span class="required">*</span></label>
+    <div class="col-sm-10">
+      <input type="text" class="form-control" name="tenDN" id="tenDN" placeholder="">
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label for="matKhau" class="col-sm-2 control-label">Mật khẩu<span class="required">*</span></label>
+    <div class="col-sm-10">
+      <input type="password" class="form-control" name="matKhau" id="matKhau" placeholder="">
+    </div>
+  </div>
+
+
+  <div class="form-group">
+    <label for="tenNV" class="col-sm-2 control-label">Tên nhân viên<span class="required">*</span></label>
+    <div class="col-sm-10">
+      <input type="text" class="form-control" name="tenNV" id="tenNV" placeholder="">
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label for="email" class="col-sm-2 control-label">Email<span class="required">*</span></label>
+    <div class="col-sm-10">
+      <input type="text" class="form-control" name="email" id="email" placeholder="">
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="diaChi" class="col-sm-2 control-label">Địa chỉ<span class="required">*</span></label>
+    <div class="col-sm-10">
+      <input type="text" class="form-control" name="diaChi" id="diaChi" placeholder="">
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label for="dienThoai" class="col-sm-2 control-label">Dien Thoai<span class="required">*</span></label>
+    <div class="col-sm-10">
+      <input type="text" class="form-control" name="dienThoai" id="dienThoai" placeholder="">
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label for="ngaySinh" class="col-sm-2 control-label">Ngay Sinh<span class="required">*</span></label>
+    <div class="col-sm-10">
+      <input type="date" class="form-control" name="ngaySinh" id="ngaySinh" placeholder="">
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label for="gioiTinh" class="col-sm-2 control-label">Giới tính<span class="required">*</span></label>
+    <div class="col-sm-10">
+      <input type="text" class="form-control" name="gioiTinh" id="gioiTinh" placeholder="">
+    </div>
+  </div>
+
+  <div class="form-group">
+    <div class="col-sm-offset-2 col-sm-10">
+      <button name="btnThem" type="submit" class="btn btn-success"><i class="glyphicon glyphicon-ok"></i> Thêm mới</button>
+      <button type="reset" class="btn btn-warning"><i class="glyphicon glyphicon-repeat"></i> Làm lại</button>
+    </div>
+  </div>
+</form>

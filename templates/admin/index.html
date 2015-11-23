@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <title>{$title}</title>
+    
+    <link href="{$config.url}templates/admin/css/bootstrap.min.css" rel="stylesheet"/>
+    <link href="{$config.url}templates/admin/css/custom.css" rel="stylesheet"/>
+    <script src="{$config.url}templates/admin/js/jquery.js"></script>
+    <script src="{$config.url}templates/admin/js/bootstrap.min.js"></script>
+    <!-- tích hợp ckeditor -->
+    <script src="{$config.url}templates/admin/ckeditor/ckeditor.js"></script>
+    <!-- thêm font awesome -->
+    <link href="{$config.url}templates/admin/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
+    <style type="text/css">
+    .required{
+        color: red;
+        font-weight: bold;
+    }
+    .navbar-inverse {
+         background-color: #3c8dbc;
+        border-color: #3c8dbc;
+    }
+    nav.navbar.navbar-inverse.navbar-fixed-top
+    {
+         background-color: #3c8dbc;
+    }
+    nav.navbar.navbar-inverse.navbar-fixed-top a
+    {
+          color: #fff;
+    }
+    .top-nav>li>a:hover, .top-nav>li>a:focus, .top-nav>.open>a, .top-nav>.open>a:hover, .top-nav>.open>a:focus {
+        color: #fff;
+     background-color: #367fa9;
+    }
+    nav.navbar.navbar-inverse.navbar-fixed-top .top-nav>.open>.dropdown-menu>li>a {
+        color: #000;
+    }
+    .navbar-inverse .navbar-collapse, .navbar-inverse .navbar-form {
+        border-color: #3c8dbc;
+    }
+    .navbar-inverse .navbar-collapse, .navbar-inverse .navbar-form {
+        border-color: #3c8dbc;
+    }
+    ul.nav.navbar-nav.side-nav a {
+        color: #E2E1E1;
+    }
+    </style>
+</head>
+<body>
+    <div id="wrapper">
+        <!-- Navigation -->
+        <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                    <span class="sr-only">Mobile menu</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="{$config.url}admin/index.php">Trang quản trị</a>
+            </div>
+            <!-- Top Menu Items -->
+            <ul class="nav navbar-right top-nav">
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> Administrator <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        <li>
+                            <a href="#"><i class="fa fa-fw fa-user"></i> Cá nhân</a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <a href="#"><i class="fa fa-fw fa-power-off"></i>  Thoát</a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+            <div class="collapse navbar-collapse navbar-ex1-collapse">
+                <ul class="nav navbar-nav side-nav">
+                    <li{if $controller=='tongquan'} class="active" {/if}>
+                        <a href="{$config.url}admin/index.php?controller=tongquan"><i class="fa fa-fw fa-dashboard"></i> Tổng quan</a>
+                    </li>
+                    <li{if $controller=='cauhinh'} class="active" {/if}>
+                        <a href="{$config.url}admin/index.php?controller=cauhinh"><i class="fa fa-fw fa-cog"></i> Cấu hình hệ thống</a>
+                    </li>
+                    <li{if $controller=='sanpham'} class="active" {/if}>
+                        <a href="javascript:;" data-toggle="collapse" data-target="#sanpham"><i class="fa fa-fw fa-file"></i> Quản lý sản phẩm <i class="fa fa-fw fa-caret-down"></i></a>
+                        <ul id="sanpham" class="collapse">
+                            <li>
+                                <a href="{$config.url}admin/index.php?controller=sanpham&action=them"><i class="fa fa-fw fa-plus-circle"></i> Thêm mới sản phẩm</a>
+                            </li>
+                            <li>
+                                <a href="{$config.url}admin/index.php?controller=sanpham"><i class="fa fa-fw fa-list"></i> Danh sách sản phẩm</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li{if $controller=='loaisp'} class="active" {/if}>
+                        <a href="{$config.url}admin/index.php?controller=loaisp"><i class="fa fa-fw fa-table"></i> Quản lý loại sản phẩm</a>
+                    </li>
+                    <li{if $controller=='donhang'} class="active" {/if}>
+                        <a href="{$config.url}admin/index.php?controller=donhang"><i class="fa fa-fw fa-shopping-cart"></i> Quản lý đơn hàng</a>
+                    </li>
+                    <li{if $controller=='hoadon'} class="active" {/if}>
+                        <a href="{$config.url}admin/index.php?controller=hoadon"><i class="fa fa-fw fa-pencil"></i> Quản lý hóa đơn</a>
+                    </li>
+
+                    <li{if $controller=='gopy'} class="active" {/if}>
+                        <a href="{$config.url}admin/index.php?controller=gopy"><i class="fa fa-fw fa-reply"></i> Quản lý góp ý</a>
+                    </li>
+                    <li{if $controller=='khachhang'} class="active" {/if}>
+                        <a href="{$config.url}admin/index.php?controller=khachhang"><i class="fa fa-fw fa-users"></i> Quản lý khách hàng</a>
+                    </li>
+                    <li{if $controller=='nhanvien'} class="active" {/if}>
+                        <a href="{$config.url}admin/index.php?controller=nhanvien"><i class="fa fa-fw fa-user"></i> Quản lý nhân viên</a>
+                    </li>
+                     <li{if $controller=='thongke'} class="active" {/if}>
+                        <a href="{$config.url}admin/index.php?controller=thongke"><i class="fa fa-fw fa-bar-chart"></i> Báo cáo - thống kê</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </nav>
+
+        <div id="page-wrapper">
+            <div class="container-fluid">
+              {include file=$inc|cat:".html"}
+            </div>
+            <!-- /.container-fluid -->
+        </div>
+        <!-- /#page-wrapper -->
+    </div>
+    <!-- /#wrapper -->
+</body>
+
+</html>

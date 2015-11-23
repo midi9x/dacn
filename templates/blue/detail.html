@@ -1,0 +1,17 @@
+<!-- PRODUCT-->
+<div class="box w578">
+    <h3 class="headbox">Chi tiết sản phẩm</h3>
+    {if isset($detail) && $detail}
+   	<div class="detailpro">
+        <h1 class="title">{$detail.title}</h1>
+        <h2 class="price">Giá bán : {$detail.price|number_format} VND</h2>
+        <p class="order"><a href="{$config.url}index.php?prog=order&id={$detail.id}">Đặt mua</a></p>
+        <p class="img"><img src="{$detail.img}"></p>
+        <p>Số lượng : {if $detail.soluong>0}Còn hàng{else}Hết hàng{/if}</p>
+        <p>Xuất xứ : {$detail.xuatxu}</p>
+        <p>Tình trạng : {if $detail.tinhtrang==1}Hàng mới{else}Hàng cũ{/if}</p>
+        <div>{$detail.mota}</div>
+    </div>
+    {/if}
+</div>
+<!-- END PRODUCT-->

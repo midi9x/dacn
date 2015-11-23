@@ -1,0 +1,7 @@
+RewriteEngine On
+RewriteRule ^(\w+).html index.php?controller=$1
+RewriteRule ^(.+)_(\d+).html index.php?controller=chitiet&id=$2
+RewriteRule ^(.+)-(\d+).html index.php?controller=loaisp&cat=$2
+#RewriteRule ^order/(\d+)/(.+).html  index.php?prog=order&id=$1
+
+

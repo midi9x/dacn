@@ -1,0 +1,105 @@
+<form action="{$link}" method="post">
+<div class="row">
+    <div class="col-lg-12">
+        <div class="page-header">
+            <h3>
+                <ol class="breadcrumb">
+                    <li>
+                        <i class="fa fa-home"></i>  <a href="{$config.url}admin/index.php">Home</a>
+                    </li>
+                    <li class="active">
+                        <i class="fa fa-list"></i> Danh sách sản phẩm
+                    </li>
+                </ol>
+            </h3>
+        </div>
+    </div>
+
+</div>
+<!-- /.row -->
+<div class="row">
+    <div class="col-lg-6">
+            <div class="input-group">
+                <span class="input-group-addon " id="basic-addon1">Tìm kiếm sản phẩm</span>
+                <input type="text" class="form-control" placeholder="Ví dụ: Giường ngủ" aria-describedby="basic-addon1" >
+                <span class="input-group-btn">
+                    <button class="btn btn-primary" type="button"><i class="glyphicon glyphicon-search"></i>  Tìm</button>
+                </span>
+            </div>
+        
+    </div>
+     <div class="col-lg-1">
+            <div class="input-group">
+                <a href="{$config.url}admin/index.php?controller=sanpham" class="btn btn-info" type="button"><i class="glyphicon glyphicon-off"></i>  Tất cả sản phẩm</a>
+            </div>
+        
+    </div>
+    <div class="col-lg-offset-1 col-lg-4">
+            <a href="{$config.url}admin/index.php?controller=sanpham&action=them" class="btn btn-success"><i class="glyphicon glyphicon-plus"></i> Thêm mới </a> 
+            <button onclick="return confirm('Bạn có muốn xóa');" type="submit" class="btn btn-danger"><i class="glyphicon glyphicon-remove"></i> Xóa mục chọn</button>
+        
+    </div>
+</div>
+<script>
+    $(document).ready(function() {
+        $('#selectall').click(function(event) { //on click
+            if(this.checked) 
+            { //Kiểm tra trạng thái đã chọn checkbox có id là selectall hay chưa
+                $('.checkbox').each(function() { //lặp qua từng checkbox
+                    this.checked = true; //chọn tất cả checkbox có class là: "checkbox"
+                });
+             }
+            else
+            {
+                $('.checkbox').each(function() { //lặp qua từng checkbox
+                    this.checked = false; //deselect all checkboxes with class "checkbox"
+                });
+            }
+        });
+    });
+</script>
+</br />
+<div class="row">
+    <div class="col-lg-12">
+        <div class="table-responsive">
+
+            <table class="table table-bordered table-hover">
+                <thead>
+                    <tr>
+                        
+                        <th>Tên sản phẩm</th>
+                        <th>Hình ảnh</th>
+                        <th>Đơn giá</th>
+                        <th>Số lượng còn</th>
+                        <th>Ngày tạo</th>
+                        <th>Trang thái</th>
+                        <th><input type="checkbox" id="selectall" name="selectall" /></th>
+                        <th colspan="2">Thao tác</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                {foreach $danhsach as $item}
+                    <tr>
+                        
+                        <td>{$item.tenSP}</td>
+                        <td><img src="{$item.hinhAnh}" width="46" alt="{$item.tenSP}" class="img-circle" /></td>
+                        <td>{$item.donGia|number_format} VND</td>
+                        <td>{$item.soLuong}</td>
+                        <td>{$item.ngayTao}</td>
+                        <td>{if $item.trangThai==1}Hiển thị {else}Không hiển thị {/if}</td>
+                        <td><input type="checkbox" name="cbitem[]" value="{$item.id}" class="checkbox" ></td>
+                        <td colspan="2">
+                            <a href="{$config.url}admin/index.php?controller=sanpham&action=sua&id={$item.id}" class="btn btn-warning"><i class="glyphicon glyphicon-pencil"></i> Sửa </a>
+                            <a href="{$config.url}admin/index.php?controller=sanpham&action=xoa&id={$item.id}" onclick="return confirm('Bạn có muốn xóa');" type="button" class="btn btn-danger"><i class="glyphicon glyphicon-remove"></i> Xóa</a>
+                        </td>
+                    </tr>
+                {/foreach}      
+                   
+                </tbody>
+            </table>
+            <center> {$model->viewpage($link,$page)}</center>
+        </div>
+    </div>
+</div>    
+</form>
