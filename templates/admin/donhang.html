@@ -12,6 +12,7 @@
                 </ol>
             </h3>
         </div>
+        
     </div>
 </div>
 <!-- /.row -->
@@ -21,7 +22,7 @@
             <div class="form-group">
             <label>Tìm kiếm theo </label>
                 <select class="form-control">
-                    <option selected>Số hóa đơn</option>
+                    <option selected>Số đơn hàng</option>
                     <option>Tên khách hàng</option>
                     <option>Ngày đặt</option>
                 </select>
@@ -40,69 +41,54 @@
             <table class="table table-bordered table-hover">
                 <thead>
                     <tr>
-                        <th><input type="checkbox" /></th>
-                        <th>Số HD</th>
-                        <th>Ngày đặt</th>
+                        
+                        <th>#</th>
                         <th>Tên khách hàng</th>
                         <th>Ngày đặt</th>
                         <th>Địa chỉ</th>
                         <th>Điện thoại</th>
                         <th>Tổng tiền</th>
                         <th>Tình trạng</th>
-                        <th colspan="2">Thao tác</th>
+                        <th style="width:200px;">Thao tác</th>
                     </tr>
                 </thead>
 
                 <tbody>
-                    <tr>
-                        <td><input type="checkbox" /></thtd>
-                        <td><a href="">#1111</a></td>
-                        <td>Ngày đặt</td>
-                        <td>Tên khách hàng</td>
-                        <td>Ngày đặt</td>
-                        <td>Địa chỉ</td>
-                        <td>Điện thoại</td>
-                        <td>Tổng tiền</td>
-                        <td>Tình trạng</td>
+                {foreach $danhsach as $dh}
+                    <tr style="height:60px;">
+                        <td><a href="index.php?controller=ctdonhang&id={$dh.id}">#{$dh.id}</a></td>
+                        <td>{$dh.hoTen}</td>
+                        <td>{$dh.ngayDat}</td>
+                        <td>{$dh.diaChi}</td>
+                        <td>{$dh.dienThoai}</td>
+                        <td>{$tt = $model->tongtien($dh.id)}
+                            {$tt.tongtien|number_format}
+                        </td>
+                        <td>{if $dh.tinhTrang == 1 }Đã xử lý{else} Chưa xử lý {/if}</td>
                         <td colspan="2">
-                            <a href="#" class="btn btn-warning"><i class="glyphicon glyphicon-pencil"></i> Lập hóa đơn </a>
-                            <button onclick="return confirm('Bạn có muốn xóa');" type="button" class="btn btn-danger"><i class="glyphicon glyphicon-remove"></i> Xóa</button>
+                             <a {if $dh.tinhTrang==1}style="pointer-events: none; cursor: default;"{/if} 
+                             href="index.php?controller=donhang&action=xacnhan&id={$dh.id}" 
+                             onclick="return confirm('Xác nhận đã xử lý đơn hàng?');" 
+                             {if $dh.tinhTrang==1}  class="btn btn-success" 
+                             {else}
+                                class="btn btn-warning" 
+                             {/if}
+                             
+                             >
+                             {if $dh.tinhTrang==1}  <i class="glyphicon glyphicon-ok"></i> 
+                             {else}
+                                <i class="glyphicon glyphicon-pencil"></i> 
+                             {/if}
+                             Xác nhận</a>
+                            <a 
+                            {if $dh.tinhTrang==1}style="pointer-events: none; cursor: default;"{/if} 
+                            href="index.php?controller=donhang&action=huy&id={$dh.id}" onclick="return confirm('Bạn có chắc chắn muốn hủy đơn hàng?');"  class="btn btn-danger"><i class="glyphicon glyphicon-remove"></i> Hủy</a>
                         </td>
                     </tr>
-
-                    <tr>
-                        <td><input type="checkbox" /></thtd>
-                        <td><a href="">#1111</a></td>
-                        <td>Ngày đặt</td>
-                        <td>Tên khách hàng</td>
-                        <td>Ngày đặt</td>
-                        <td>Địa chỉ</td>
-                        <td>Điện thoại</td>
-                        <td>Tổng tiền</td>
-                        <td>Tình trạng</td>
-                        <td colspan="2">
-                            <a href="#" class="btn btn-warning"><i class="glyphicon glyphicon-pencil"></i> Lập hóa đơn  </a>
-                            <button onclick="return confirm('Bạn có muốn xóa');" type="button" class="btn btn-danger"><i class="glyphicon glyphicon-remove"></i> Xóa</button>
-                        </td>
-                    </tr>
-
-                    <tr>
-                        <td><input type="checkbox" /></thtd>
-                        <td><a href="">#1111</a></td>
-                        <td>Ngày đặt</td>
-                        <td>Tên khách hàng</td>
-                        <td>Ngày đặt</td>
-                        <td>Địa chỉ</td>
-                        <td>Điện thoại</td>
-                        <td>Tổng tiền</td>
-                        <td>Tình trạng</td>
-                        <td colspan="2">
-                            <a href="#" class="btn btn-warning"><i class="glyphicon glyphicon-pencil"></i> Lập hóa đơn  </a>
-                            <button onclick="return confirm('Bạn có muốn xóa');" type="button" class="btn btn-danger"><i class="glyphicon glyphicon-remove"></i> Xóa</button>
-                        </td>
-                    </tr>
+                {/foreach}
                 </tbody>
             </table>
+            <center> {$model->viewpage($link,$page)}</center>
         </div>
     </div>
 </div>    

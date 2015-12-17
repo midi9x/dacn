@@ -1,7 +1,7 @@
 RewriteEngine On
+RewriteRule ^don-hang-(\d+).html index.php?controller=ctdonhang&id=$1
 RewriteRule ^(\w+).html index.php?controller=$1
 RewriteRule ^(.+)_(\d+).html index.php?controller=chitiet&id=$2
 RewriteRule ^(.+)-(\d+).html index.php?controller=loaisp&cat=$2
-#RewriteRule ^order/(\d+)/(.+).html  index.php?prog=order&id=$1
-
-
+#RewriteRule ^order/(\d+)  index.php?controller=order&id=$1
+RewriteRule ^order/(\d+)/(\d+) index.php?controller=order&id=$1&sl=$2

@@ -1,7 +1,7 @@
-<?php /* Smarty version 3.1.27, created on 2015-11-22 19:25:35
+<?php /* Smarty version 3.1.27, created on 2015-12-08 10:21:03
          compiled from "C:\xampp\htdocs\dacn\templates\admin\loaisp.html" */ ?>
 <?php
-/*%%SmartyHeaderCode:12285651b43fdc35a3_65476025%%*/
+/*%%SmartyHeaderCode:1477856664c9fcc6f56_22603970%%*/
 if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
@@ -9,11 +9,11 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '791de9c0a0f730918e512b6aa5ef87d5efc2cb6a' => 
     array (
       0 => 'C:\\xampp\\htdocs\\dacn\\templates\\admin\\loaisp.html',
-      1 => 1448195134,
+      1 => 1448363704,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '12285651b43fdc35a3_65476025',
+  'nocache_hash' => '1477856664c9fcc6f56_22603970',
   'variables' => 
   array (
     'link' => 0,
@@ -26,13 +26,13 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'has_nocache_code' => false,
   'version' => '3.1.27',
-  'unifunc' => 'content_5651b43fe4c144_64023933',
+  'unifunc' => 'content_56664c9fd4faf6_75424540',
 ),false);
 /*/%%SmartyHeaderCode%%*/
-if ($_valid && !is_callable('content_5651b43fe4c144_64023933')) {
-function content_5651b43fe4c144_64023933 ($_smarty_tpl) {
+if ($_valid && !is_callable('content_56664c9fd4faf6_75424540')) {
+function content_56664c9fd4faf6_75424540 ($_smarty_tpl) {
 
-$_smarty_tpl->properties['nocache_hash'] = '12285651b43fdc35a3_65476025';
+$_smarty_tpl->properties['nocache_hash'] = '1477856664c9fcc6f56_22603970';
 ?>
 <?php echo '<script'; ?>
 >
@@ -78,6 +78,7 @@ admin/index.php">Home</a>
 <div class="row">
     <div class="col-lg-4">
         <h2> <span class="action">Thêm</span> loại sản phẩm</h2>
+        <div style="margin-top: 25px;"></div>
         <form class="form-horizontal">
             <input type="hidden" name="id" id="id" />
             <div class="form-group">
@@ -89,14 +90,14 @@ admin/index.php">Home</a>
             <div class="form-group">
                 <label for="moTamoTamoTa" class="col-sm-3 control-label">Mô tả</label>
                 <div class="col-sm-9">
-                    <textarea class="form-control" name="moTa" id="moTa"  rows="7"></textarea>
+                    <textarea class="form-control" name="moTa" id="moTa"  rows="8"></textarea>
                 </div>
             </div>
 
             <div class="form-group">
                 <label for="tuKhoa" class="col-sm-3 control-label">Từ khóa</label>
                 <div class="col-sm-9">
-                    <textarea class="form-control" name="tuKhoa" id="tuKhoa" rows="5"></textarea>
+                    <textarea class="form-control" name="tuKhoa" id="tuKhoa" rows="7"></textarea>
                 </div>
             </div>
 
@@ -128,7 +129,7 @@ $_smarty_tpl->tpl_vars['row'] = $foreach_row_Sav;
                     
                 </div>
             </div>
-
+            <div style="margin-top: 25px;"></div>
             <div class="form-group">
                 <div class="col-sm-offset-2 col-sm-10">
                     <button name="btnThem" id="btnCapnhat" type="submit" class="btn btn-success"><i class="glyphicon glyphicon-ok"></i> <span class="action">Thêm </span></button>

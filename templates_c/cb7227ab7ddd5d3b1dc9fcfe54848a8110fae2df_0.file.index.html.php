@@ -1,7 +1,7 @@
-<?php /* Smarty version 3.1.27, created on 2015-11-22 19:19:58
+<?php /* Smarty version 3.1.27, created on 2015-12-09 21:25:44
          compiled from "C:\xampp\htdocs\dacn\templates\admin\index.html" */ ?>
 <?php
-/*%%SmartyHeaderCode:235815651b2ee52aef2_83145555%%*/
+/*%%SmartyHeaderCode:9697566839e88efd68_66445927%%*/
 if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
@@ -9,27 +9,28 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'cb7227ab7ddd5d3b1dc9fcfe54848a8110fae2df' => 
     array (
       0 => 'C:\\xampp\\htdocs\\dacn\\templates\\admin\\index.html',
-      1 => 1448194796,
+      1 => 1449671144,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '235815651b2ee52aef2_83145555',
+  'nocache_hash' => '9697566839e88efd68_66445927',
   'variables' => 
   array (
     'title' => 0,
     'config' => 0,
+    'adminlogin' => 0,
     'controller' => 0,
     'inc' => 0,
   ),
   'has_nocache_code' => false,
   'version' => '3.1.27',
-  'unifunc' => 'content_5651b2ee8400a6_95538628',
+  'unifunc' => 'content_566839e89da3a1_50816315',
 ),false);
 /*/%%SmartyHeaderCode%%*/
-if ($_valid && !is_callable('content_5651b2ee8400a6_95538628')) {
-function content_5651b2ee8400a6_95538628 ($_smarty_tpl) {
+if ($_valid && !is_callable('content_566839e89da3a1_50816315')) {
+function content_566839e89da3a1_50816315 ($_smarty_tpl) {
 
-$_smarty_tpl->properties['nocache_hash'] = '235815651b2ee52aef2_83145555';
+$_smarty_tpl->properties['nocache_hash'] = '9697566839e88efd68_66445927';
 ?>
 <!DOCTYPE html>
 <html lang="vi">
@@ -111,14 +112,16 @@ admin/index.php">Trang quản trị</a>
             <!-- Top Menu Items -->
             <ul class="nav navbar-right top-nav">
                 <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> Administrator <b class="caret"></b></a>
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> <?php echo $_smarty_tpl->tpl_vars['adminlogin']->value['tenNV'];?>
+ <b class="caret"></b></a>
                     <ul class="dropdown-menu">
                         <li>
                             <a href="#"><i class="fa fa-fw fa-user"></i> Cá nhân</a>
                         </li>
                         <li class="divider"></li>
                         <li>
-                            <a href="#"><i class="fa fa-fw fa-power-off"></i>  Thoát</a>
+                            <a href="<?php echo $_smarty_tpl->tpl_vars['config']->value['url'];?>
+admin/index.php?controller=logout"><i class="fa fa-fw fa-power-off"></i>  Thoát</a>
                         </li>
                     </ul>
                 </li>
@@ -150,7 +153,7 @@ admin/index.php?controller=sanpham"><i class="fa fa-fw fa-list"></i> Danh sách 
                         <a href="<?php echo $_smarty_tpl->tpl_vars['config']->value['url'];?>
 admin/index.php?controller=loaisp"><i class="fa fa-fw fa-table"></i> Quản lý loại sản phẩm</a>
                     </li>
-                    <li<?php if ($_smarty_tpl->tpl_vars['controller']->value == 'donhang') {?> class="active" <?php }?>>
+                    <li<?php if ($_smarty_tpl->tpl_vars['controller']->value == 'donhang' || $_smarty_tpl->tpl_vars['controller']->value == 'ctdonhang') {?> class="active" <?php }?>>
                         <a href="<?php echo $_smarty_tpl->tpl_vars['config']->value['url'];?>
 admin/index.php?controller=donhang"><i class="fa fa-fw fa-shopping-cart"></i> Quản lý đơn hàng</a>
                     </li>

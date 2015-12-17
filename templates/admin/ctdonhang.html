@@ -1,0 +1,56 @@
+<div class="row">
+    <div class="col-lg-8">
+        <div class="page-header">
+            <h3>
+                <ol class="breadcrumb">
+                    <li>
+                        <i class="fa fa-home"></i>  <a href="{$config.url}admin/index.php">Home</a>
+                    </li>
+                    <li class="active">
+                        <i class="fa fa-shopping-cart"></i> Chi tiết đơn hàng #{$id}
+                    </li>
+                </ol>
+            </h3>
+        </div>
+    </div>
+    <div class="col-lg-4">
+        <div class="page-header" style="padding-top: 7px;">
+             <a class="btn btn-info" href="index.php?controller=donhang"><i class="glyphicon glyphicon-off"></i>  Quay lại</a>
+        </div>
+
+    </div>
+</div>
+<!-- /.row -->
+<div class="row">
+    <div class="col-lg-12">
+        <div class="table-responsive">
+            <table class="table table-bordered table-hover">
+                <thead>
+                    <tr>
+                        
+                        <th>Mã SP</th>
+                        <th>Tên sản phẩm</th>
+                        <th>Đơn giá</th>
+                        <th>Số lượng</th>
+                        <th>Thành tiền</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                {foreach $danhsach as $ct}
+                {$id=$ct.id_sp}
+                {$sp = $model->selectone('sanpham'," id = '$id'")}
+                {$tien = $sp.donGia*$ct.soLuong}
+                    <tr style="height:60px;">
+                        <td><a>#{$ct.id}</a></td>
+                        <td>{$sp.tenSP}</td>
+                        <td>{$sp.donGia|number_format} VND</td>
+                        <td>{$ct.soLuong}</td>
+                        <td>{$tien|number_format} VND</td>
+                    </tr>
+                {/foreach}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>    

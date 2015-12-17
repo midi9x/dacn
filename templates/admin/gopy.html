@@ -21,33 +21,40 @@
             <table class="table table-bordered table-hover">
                 <thead>
                     <tr>
-                        <th><input type="checkbox" /></th>
-                        <th>Id</th>
+                        <th>#</th>
                         <th>Họ tên khách hàng</th>
-                        <th>Địa chỉ</th>
+                        <th width="150">Địa chỉ</th>
                         <th>Điện thoại</th>
                         <th>Email</th>
                         <th>Ngày góp ý</th>
-                        <th colspan="3">Nội dụng</th>
+                        <th colspan="3" width="500">Nội dụng</th>
                         <th>Thao tác</th>
                     </tr>
                 </thead>
 
                 <tbody>
+                    {foreach $danhsach as $item}
                     <tr>
-                        <td><input type="checkbox" /></td>
-                        <td>Id</td>
-                        <td>Họ tên khách hàng</td>
-                        <td>Địa chỉ</td>
-                        <td>Điện thoại</td>
-                        <td>Email</td>
-                        <td>Ngày góp ý</td>
-                        <td colspan="3">Nội dụng Nội dụng Nội dụng Nội dụng Nội dụng Nội dụng Nội dụng Nội dụng Nội dụng Nội dụng Nội dụng Nội dụng Nội dụng Nội dụng  </td>
-                        <td> <button onclick="return confirm('Bạn có muốn xóa');" type="button" class="btn btn-danger"><i class="glyphicon glyphicon-remove"></i> Xóa</button>
-        </div></td>
+                        <td>{$item.id}</td>
+                        <td>
+                        {$idkh = $item.id_kh}
+                        {$kh = $model->selectone('khachhang',"id='$idkh'")}
+                        {$kh.tenKH}
+                        </td>
+                        <td>{$kh.diaChi}</td>
+                        <td>{$kh.dienThoai}</td>
+                        <td>{$kh.email}</td>
+                        <td>{$item.ngayGopY}</td>
+                        <td colspan="3">
+                            {$item.noiDung}
+                        </td>
+                        <td> <a href="index.php?controller=gopy&action=xoa&id={$item.id}" onclick="return confirm('Bạn có muốn xóa');" class="btn btn-danger"><i class="glyphicon glyphicon-remove"></i> Xóa</a>
+                        </td>
                     </tr>
+                    {/foreach}
                 </tbody>
             </table>
+            <center> {$model->viewpage($link,$page)}</center>
         </div>
     </div>
 </div>    

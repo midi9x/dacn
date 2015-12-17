@@ -181,10 +181,10 @@ class Model
 	}
 	
 	//Phương thức: tìm tất cả các ID con trong 1 cây đa cấp
-	function findid($parent)
+	function findid($loaiCha)
 	{
-		$list=$parent;
-		$strlay="SELECT * FROM tbcategory WHERE parent=$parent";
+		$list=$loaiCha;
+		$strlay="SELECT * FROM loaisp WHERE loaiCha=$loaiCha";
 		$re=$this->pdo->query($strlay);
 		if(!$re)die($strlay);//Kiểm tra lỗi nếu có
 		foreach($re->fetchAll() as $item)
@@ -290,4 +290,59 @@ class Model
 		return $text;
 	}
 
+	function login($user,$pass)
+	{
+		$sql = "select * from nhanvien where tenDN = ? and matKhau = ? ";
+		$re=$this->pdo->prepare($sql);
+		$re->execute(array($user,$pass));
+		if($re->rowCount()>0) return $re->fetch(PDO::FETCH_ASSOC);
+		else return false;
+	}
+	function khlogin($user,$pass)
+	{
+		$sql = "select * from khachhang where tenDN = ? and matKhau = ? ";
+		$re=$this->pdo->prepare($sql);
+		$re->execute(array($user,$pass));
+		if($re->rowCount()>0) return $re->fetch(PDO::FETCH_ASSOC);
+		else return false;
+	}
+	function sendmail()
+	{
+		require('class.phpmailer.php');
+		// cấu hình đến smtp gmail
+		$mail = new PHPMailer();
+		$mail->IsSMTP();
+		$mail->Host='smtp.gmail.com';
+		$mail->Port=465;
+		$mail->SMTPAuth=true;
+		$mail->Username='php0715e@gmail.com';
+		$mail->Password='php0715ee123!@#';
+		$mail->SMTPSecure='ssl';
+		$mail->AddAddress('midi9x@gmail.com');
+		$mail->FromName='MinhDinh';
+		$mail->Subject='test';
+		$mail->Body='noi dung';
+		$mail->IsHtml(true);
+		$mail->ChartSet='utf8';
+		$mail->Send();
+		return $mail->ErrorInfo;
+
+	}
+	//tong tien theo id don hang
+	function tongtien($id)
+	{
+		$sqldata="SELECT SUM(donGia*ctdonhang.soLuong) as tongtien FROM ctdonhang,sanpham  WHERE ctdonhang.id_sp = sanpham.id AND ctdonhang.id_dh='$id'";
+		$re=$this->pdo->query($sqldata);
+		if($re->rowCount()>0) return $re->fetch(PDO::FETCH_ASSOC);
+		else return false;
+	}
+	function tongtienhd($id)
+	{
+		$sqldata="SELECT SUM(donGia*cthoadon.soLuong) as tongtien FROM cthoadon,sanpham  WHERE cthoadon.id_sp = sanpham.id AND cthoadon.id_hd='$id'";
+		$re=$this->pdo->query($sqldata);
+		if($re->rowCount()>0) return $re->fetch(PDO::FETCH_ASSOC);
+		else return false;
+	}
+
 }
+

@@ -1,0 +1,82 @@
+
+  <section class="main-container col2-left-layout">
+    <div class="main container">
+      <div class="row">
+        <section class="col-main col-sm-9 col-sm-push-3 wow">
+          <div class="category-title">
+            <h1>
+            {$id= $idcat}
+            {$cat = $model->selectone('loaisp',"id = '$id'")}
+            {$cat.tenLoai}
+            </h1>
+          </div>
+          <div class="category-products">
+            <div class="toolbar">
+              <div class="pager">
+                <div class="pages">
+                  <label>Trang:</label>
+                  {$model->viewpage($link,$page)}
+                </div>
+              </div>
+            </div>
+            <ul class="products-grid">
+              {foreach $danhsach as $sp}
+                 <li class="item col-lg-4 col-md-4 col-sm-6 col-xs-6">
+                    <div class="col-item">
+                          <div class="sale-label sale-top-right">Hot</div>
+                          <div class="images-container"> <a class="product-image" title="{$sp.tenSP}" href="{$model->alias($sp.tenSP)}_{$sp.id}.html"> <img src="{$sp.hinhAnh}" class="img-responsive" alt="{$sp.tenSP}" style="width:262px;height:318px;" /> </a>
+                            <div class="actions">
+                              <div class="actions-inner">
+                                <button onclick="window.location.href='/order/{$sp.id}/1'" type="button" title="Thêm vào giỏ" class="button btn-cart"><span>Thêm vào giỏ</span></button>
+                                <ul class="add-to-links">
+                                  <li><a href="{$model->alias($sp.tenSP)}_{$sp.id}.html" title="" class="link-wishlist"><span><!-- Add to Wishlist --></span></a></li>
+                                  <li><a href="{$model->alias($sp.tenSP)}_{$sp.id}.html" title="" class="link-compare "><span><!-- Add to Compare --></span></a></li>
+                                </ul>
+                              </div>
+                            </div>
+                            <div class="qv-button-container"> <a href="{$model->alias($sp.tenSP)}_{$sp.id}.html" class="qv-e-button btn-quickview-1"><span><span></span></span></a> </div>
+                          </div>
+                          <div class="info">
+                            <div class="info-inner">
+                              <div class="item-title"> <a title="{$sp.tenSP}" href="{$model->alias($sp.tenSP)}_{$sp.id}.html">{$sp.tenSP}</a> </div>
+                              <!--item-title-->
+                              <div class="item-content">
+                                <div class="ratings">
+                                  <div class="rating-box">
+                                    <div style="width:60%" class="rating"></div>
+                                  </div>
+                                </div>
+                                <div class="price-box">
+                                  <p class="special-price"> <span class="price"> {$sp.donGia|number_format} VND  </span> </p>
+                                 <!--  <p class="old-price"> <span class="price-sep">-</span> <span class="price"> {$sp.donGia}</span> </p> -->
+                                </div>
+                              </div>
+                              <!--item-content--> 
+                            </div>
+                            <!--info-inner--> 
+                            
+                            <!--actions-->
+                            <div class="clearfix"> </div>
+                          </div>
+                    </div>
+              </li>
+              {/foreach}
+            </ul>
+          </div>
+        </section>
+        <aside class="col-left sidebar col-sm-3 col-xs-12 col-sm-pull-9 wow">
+          <div class="side-nav-categories">
+            <div class="block-title"> Danh mục </div>
+            <!--block-title--> 
+            <!-- BEGIN BOX-CATEGORY -->
+            <div class="box-content box-category">
+              <ul>
+                {$model->viewcate(0)}
+              </ul>
+            </div>
+            <!--box-content box-category--> 
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>

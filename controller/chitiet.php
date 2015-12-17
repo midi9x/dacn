@@ -14,6 +14,8 @@ if(isset($_GET['id']) && is_numeric($_GET['id']) && $_GET['id']>0)
 	preg_match_all('!http://[a-z0-9\-\.\/]+\.(?:jpe?g|png|gif)!Ui' , $mota , $hinhanh);
 	$smarty->assign('hinhanh',$hinhanh);	
 }
+$url="http://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
+$smarty->assign('url',$url);
 $spmoi=$model->selectall('sanpham',6,'');
 $smarty->assign('spmoi',$spmoi);
 ?>

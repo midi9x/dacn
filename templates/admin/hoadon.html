@@ -1,0 +1,106 @@
+<div class="row">
+    <div class="col-lg-12">
+        <div class="page-header">
+            <h3>
+                <ol class="breadcrumb">
+                    <li>
+                        <i class="fa fa-home"></i>  <a href="{$config.url}admin/index.php">Home</a>
+                    </li>
+                    <li class="active">
+                        <i class="fa fa-shopping-cart"></i> Quản lý hóa đơn
+                    </li>
+                </ol>
+            </h3>
+        </div>
+        
+    </div>
+</div>
+<!-- /.row -->
+<div class="row">
+    <div class="col-lg-12">
+        <form class="form-inline">
+            <div class="form-group">
+            <label>Tìm kiếm theo </label>
+                <select class="form-control">
+                    <option selected>Số hóa đơn</option>
+                    <option>Số đơn hàng</option>
+                    <option>Ngày lập</option>
+                </select>
+                <input type="text" class="form-control" placeholder="Nhập từ khóa" size="60" >
+            </div>
+            <button class="btn btn-primary" type="button"><i class="glyphicon glyphicon-search"></i>  Tìm</button>
+            <button class="btn btn-info" type="button"><i class="glyphicon glyphicon-off"></i>  Tất cả đơn hàng</button>
+        </form>
+
+    </div>
+</div>
+</br />
+<div class="row">
+    <div class="col-lg-12">
+        <div class="table-responsive">
+            <table class="table table-bordered table-hover">
+                <thead>
+                    <tr>
+                        
+                        <th>#</th>
+                        <th>Người xác nhận</th>
+                        <th>Ngày lập</th>
+                        <th>Số đơn hàng</th>
+                        <th>Tổng tiền</th>
+                        <th>Tình trạng</th>
+                        <th style="width:200px;">Thao tác</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                {foreach $danhsach as $hd}
+                    <tr style="height:60px;">
+                        <td>#{$hd.id}</td>
+                        <td>
+                        {if $hd.id_nv==0}
+                         NULL
+                        {else}
+                        {$id_nv = $hd.id_nv}
+                        {$nv = $model->selectone('nhanvien'," id= '$id_nv'")}
+                        {$nv.tenNV}
+                        {/if}
+                        </td>
+                        <td>{$hd.ngayLap}</td>
+                        <td>
+                        <a href="{$config.url}admin/index.php?controller=ctdonhang&id={$hd.id_dh}">
+                        #{$hd.id_dh}
+                        </a>
+                        
+                        </td>
+                        <td>
+                            {$tt = $model-> tongtienhd($hd.id)}
+                            {$tt.tongtien|number_format} VND
+                        </td>
+                        <td>{if $hd.tinhTrang == 1 }Hoàn thành{else} Đang xử lý {/if}</td>
+                        <td colspan="2">
+                             <a {if $hd.tinhTrang==1}style="pointer-events: none; cursor: default;"{/if} 
+                             href="index.php?controller=hoadon&action=xacnhan&id={$hd.id}" 
+                             onclick="return confirm('Xác nhận đã xử lý đơn hàng?');" 
+                             {if $hd.tinhTrang==1}  class="btn btn-success" 
+                             {else}
+                                class="btn btn-warning" 
+                             {/if}
+                             
+                             >
+                             {if $hd.tinhTrang==1}  <i class="glyphicon glyphicon-ok"></i> 
+                             {else}
+                                <i class="glyphicon glyphicon-pencil"></i> 
+                             {/if}
+                             Xác nhận</a>
+                            <a 
+                            {if $hd.tinhTrang==1}style="pointer-events: none; cursor: default;"{/if} 
+                            href="index.php?controller=hoadon&action=huy&id={$hd.id}" onclick="return confirm('Bạn có chắc chắn muốn hủy đơn hàng?');"  class="btn btn-danger"><i class="glyphicon glyphicon-remove"></i> Hủy</a>
+                        </td>
+                    </tr>
+                {/foreach}
+                </tbody>
+            </table>
+            <center> {$model->viewpage($link,$page)}</center>
+        </div>
+    </div>
+</div>    

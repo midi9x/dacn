@@ -15,7 +15,7 @@
     </div>
     <div class="col-lg-4">
         <div class="page-header">
-            <a href="{$config.url}admin/index.php?controller=sanpham&action=them" class="btn btn-success"><i class="glyphicon glyphicon-plus"></i> Thêm mới </a> 
+            <a href="{$config.url}admin/index.php?controller=nhanvien&action=them" class="btn btn-success"><i class="glyphicon glyphicon-plus"></i> Thêm mới </a> 
             <button onclick="return confirm('Bạn có muốn xóa');" type="button" class="btn btn-danger"><i class="glyphicon glyphicon-remove"></i> Khóa mục chọn</button>
         </div>
     </div>
@@ -35,7 +35,7 @@
     </div>
      <div class="col-lg-3">
             <div class="input-group">
-                <button class="btn btn-info" type="button"><i class="glyphicon glyphicon-off"></i>  Tất cả khách hàng</button>
+                <button class="btn btn-info" type="button"><i class="glyphicon glyphicon-off"></i>  Tất cả nhân viên</button>
             </div>
         
     </div>
@@ -48,37 +48,44 @@
             <table class="table table-bordered table-hover">
                 <thead>
                     <tr>
-                        <th><input type="checkbox" /></th>
-                        <th>Tên khách hàng</th>
+                        <th>#</th>
+                        <th>Tên nhân viên</th>
                         <th>Tên đăng nhập</th>
                         <th>Địa chỉ</th>
                         <th>Điện thoại</th>
                         <th>Email</th>
                         <th>Phân loại</th>
                         <th>Tình trạng</th>
-                        <th colspan="2">Thao tác</th>
+                        <th width="200">Thao tác</th>
                     </tr>
                 </thead>
 
                 <tbody>
+                {foreach $danhsach as $item}
                     <tr>
-                        <td><input type="checkbox" /></td>
-                        <td>Tên khách hàng</td>
-                        <td>Tên đăng nhập</td>
-                        <td>Địa chỉ</td>
-                        <td>Điện thoại</td>
-                        <td>Email</td>
-                        <td>Phân loại</td>
-                        <td>Tình trạng</td>
+                        <td>{$item.id}</td>
+                        <td>{$item.tenKH}</td>
+                        <td>{$item.tenDN}</td>
+                        <td>{$item.diaChi}</td>
+                        <td>{$item.dienThoai}</td>
+                        <td>{$item.email}</td>
+                        <td>
+                        {if $item.phanLoai==0}Bình thường{else}Khách vip{/if}
+                        </td>
+                        <td>
+                        {if $item.tinhTrang==0}Tạm khóa{else}Hoạt động{/if}
+                        </td>
                         <td colspan="2">
                             <a href="#" class="btn btn-warning"><i class="glyphicon glyphicon-pencil"></i> Sửa </a>
-                            <button onclick="return confirm('Bạn có muốn xóa');" type="button" class="btn btn-danger"><i class="glyphicon glyphicon-remove"></i> Khóa</button>
+                            <a href="#" onclick="return confirm('Bạn có muốn xóa');" type="button" class="btn btn-danger"><i class="glyphicon glyphicon-remove"></i> Khóa</a>
                         </td>
                     </tr>
 
-                    
+                {/foreach}
                 </tbody>
             </table>
+                
+            <center> {$model->viewpage($link,$page)}</center>
         </div>
     </div>
 </div>    

@@ -1,5 +1,5 @@
 <?php
 require('connect.php');
-require('control/product.php');
-$smarty->display('product.html');
+require('controller/timkiem.php');
+$smarty->display('timkiem.html');
 ?>

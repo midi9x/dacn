@@ -1,5 +1,5 @@
 <?php 
-$title='Quản lý nhanvien'; 
+$title='Quản lý nhân viên'; 
 $link=$config['url'].'admin/index.php?controller=nhanvien';
 //thêm
 if(isset($_POST['btnThem']))

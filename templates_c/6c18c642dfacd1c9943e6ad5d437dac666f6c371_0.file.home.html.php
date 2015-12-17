@@ -1,7 +1,7 @@
-<?php /* Smarty version 3.1.27, created on 2015-11-22 09:51:37
+<?php /* Smarty version 3.1.27, created on 2015-12-08 02:09:14
          compiled from "templates\home\home.html" */ ?>
 <?php
-/*%%SmartyHeaderCode:1838456518219bf9287_59986256%%*/
+/*%%SmartyHeaderCode:2836156662dba14fc28_54880811%%*/
 if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
@@ -9,11 +9,11 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '6c18c642dfacd1c9943e6ad5d437dac666f6c371' => 
     array (
       0 => 'templates\\home\\home.html',
-      1 => 1448182295,
+      1 => 1449208287,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '1838456518219bf9287_59986256',
+  'nocache_hash' => '2836156662dba14fc28_54880811',
   'variables' => 
   array (
     'config' => 0,
@@ -25,13 +25,13 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'has_nocache_code' => false,
   'version' => '3.1.27',
-  'unifunc' => 'content_56518219d7be53_24985645',
+  'unifunc' => 'content_56662dba2caaf6_89397048',
 ),false);
 /*/%%SmartyHeaderCode%%*/
-if ($_valid && !is_callable('content_56518219d7be53_24985645')) {
-function content_56518219d7be53_24985645 ($_smarty_tpl) {
+if ($_valid && !is_callable('content_56662dba2caaf6_89397048')) {
+function content_56662dba2caaf6_89397048 ($_smarty_tpl) {
 
-$_smarty_tpl->properties['nocache_hash'] = '1838456518219bf9287_59986256';
+$_smarty_tpl->properties['nocache_hash'] = '2836156662dba14fc28_54880811';
 ?>
 
   <div id="magik-slideshow" class="magik-slideshow">
@@ -44,23 +44,23 @@ echo $_smarty_tpl->tpl_vars['config']->value['dirtemp'];?>
 images/slider_img_1.html'><img src='<?php echo $_smarty_tpl->tpl_vars['config']->value['url'];
 echo $_smarty_tpl->tpl_vars['config']->value['dirtemp'];?>
 images/slide-img1.jpg' data-bgposition='left top' data-bgfit='cover' data-bgrepeat='no-repeat' alt="banner"/>
-              <div    class='tp-caption ExtraLargeTitle sft  tp-resizeme ' data-x='15'  data-y='80'  data-endspeed='500'  data-speed='500' data-start='1100' data-easing='Linear.easeNone' data-splitin='none' data-splitout='none' data-elementdelay='0.1' data-endelementdelay='0.1' style='z-index:2; white-space:nowrap;'>Welcome to our</div>
-              <div    class='tp-caption LargeTitle sfl  tp-resizeme ' data-x='15'  data-y='135'  data-endspeed='500'  data-speed='500' data-start='1300' data-easing='Linear.easeNone' data-splitin='none' data-splitout='none' data-elementdelay='0.1' data-endelementdelay='0.1' style='z-index:3; white-space:nowrap;'>Furniture<span> gallery </span></div>
-              <div    class='tp-caption sfb  tp-resizeme ' data-x='15'  data-y='360'  data-endspeed='500'  data-speed='500' data-start='1500' data-easing='Linear.easeNone' data-splitin='none' data-splitout='none' data-elementdelay='0.1' data-endelementdelay='0.1' style='z-index:4; white-space:nowrap;'><a href='#' class="view-more">View More</a> <a href='#' class="buy-btn">Buy Now</a></div>
-              <div    class='tp-caption Title sft  tp-resizeme ' data-x='15'  data-y='230'  data-endspeed='500'  data-speed='500' data-start='1500' data-easing='Power2.easeInOut' data-splitin='none' data-splitout='none' data-elementdelay='0.1' data-endelementdelay='0.1' style='z-index:4; white-space:nowrap;'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus diam arcu.</div>
-              <div    class='tp-caption Title sft  tp-resizeme ' data-x='15'  data-y='400'  data-endspeed='500'  data-speed='500' data-start='1500' data-easing='Power2.easeInOut' data-splitin='none' data-splitout='none' data-elementdelay='0.1' data-endelementdelay='0.1' style='z-index:4; white-space:nowrap;font-size:11px'>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</div>
+              <div    class='tp-caption ExtraLargeTitle sft  tp-resizeme ' data-x='15'  data-y='80'  data-endspeed='500'  data-speed='500' data-start='1100' data-easing='Linear.easeNone' data-splitin='none' data-splitout='none' data-elementdelay='0.1' data-endelementdelay='0.1' style='z-index:2; white-space:nowrap;'><!-- Welcome to our --></div>
+              <div    class='tp-caption LargeTitle sfl  tp-resizeme ' data-x='15'  data-y='135'  data-endspeed='500'  data-speed='500' data-start='1300' data-easing='Linear.easeNone' data-splitin='none' data-splitout='none' data-elementdelay='0.1' data-endelementdelay='0.1' style='z-index:3; white-space:nowrap;'><!-- Furniture --><span> <!-- gallery  --></span></div>
+              <div    class='tp-caption sfb  tp-resizeme ' data-x='15'  data-y='360'  data-endspeed='500'  data-speed='500' data-start='1500' data-easing='Linear.easeNone' data-splitin='none' data-splitout='none' data-elementdelay='0.1' data-endelementdelay='0.1' style='z-index:4; white-space:nowrap;'><a href='#' class="view-more"><!-- View More --></a> <a href='#' class="buy-btn"><!-- Buy Now --></a></div>
+              <div    class='tp-caption Title sft  tp-resizeme ' data-x='15'  data-y='230'  data-endspeed='500'  data-speed='500' data-start='1500' data-easing='Power2.easeInOut' data-splitin='none' data-splitout='none' data-elementdelay='0.1' data-endelementdelay='0.1' style='z-index:4; white-space:nowrap;'><!-- Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus diam arcu. --></div>
+              <div    class='tp-caption Title sft  tp-resizeme ' data-x='15'  data-y='400'  data-endspeed='500'  data-speed='500' data-start='1500' data-easing='Power2.easeInOut' data-splitin='none' data-splitout='none' data-elementdelay='0.1' data-endelementdelay='0.1' style='z-index:4; white-space:nowrap;font-size:11px'><!-- Lorem ipsum dolor sit amet, consectetur adipiscing elit. --></div>
             </li>
             <li data-transition='random' data-slotamount='7' data-masterspeed='1000' data-thumb='<?php echo $_smarty_tpl->tpl_vars['config']->value['url'];
 echo $_smarty_tpl->tpl_vars['config']->value['dirtemp'];?>
 images/slider_img_2.jpg' class="black-text"><img src='<?php echo $_smarty_tpl->tpl_vars['config']->value['url'];
 echo $_smarty_tpl->tpl_vars['config']->value['dirtemp'];?>
 images/slide-img2.jpg'  data-bgposition='left top'  data-bgfit='cover' data-bgrepeat='no-repeat' alt="banner"/>
-              <div class='tp-caption ExtraLargeTitle sft  tp-resizeme ' data-x='15'  data-y='80'  data-endspeed='500'  data-speed='500' data-start='1100' data-easing='Linear.easeNone' data-splitin='none' data-splitout='none' data-elementdelay='0.1' data-endelementdelay='0.1' style='z-index:2; white-space:nowrap;'>BATHROOM INSPIRATION</div>
-              <div    class='tp-caption LargeTitle sfl  tp-resizeme ' data-x='15'  data-y='135'  data-endspeed='500'  data-speed='500' data-start='1300' data-easing='Linear.easeNone' data-splitin='none' data-splitout='none' data-elementdelay='0.1' data-endelementdelay='0.1' style='z-index:3; white-space:nowrap;'><span>BATHROOM</span> IDEAS</div>
-              <div    class='tp-caption sfb  tp-resizeme ' data-x='15'  data-y='360'  data-endspeed='500'  data-speed='500' data-start='1500' data-easing='Linear.easeNone' data-splitin='none' data-splitout='none' data-elementdelay='0.1' data-endelementdelay='0.1' style='z-index:4; white-space:nowrap;'><a href='#' class="view-more">View More</a> <a href='#' class="buy-btn">Buy Now</a></div>
-              <div    class='tp-caption Title sft  tp-resizeme ' data-x='15'  data-y='230'  data-endspeed='500'  data-speed='500' data-start='1500' data-easing='Power2.easeInOut' data-splitin='none' data-splitout='none' data-elementdelay='0.1' data-endelementdelay='0.1' style='z-index:4; white-space:nowrap;'>In augue urna, nunc, tincidunt, augue,
-                augue facilisis facilisis.</div>
-              <div    class='tp-caption Title sft  tp-resizeme ' data-x='15'  data-y='400'  data-endspeed='500'  data-speed='500' data-start='1500' data-easing='Power2.easeInOut' data-splitin='none' data-splitout='none' data-elementdelay='0.1' data-endelementdelay='0.1' style='z-index:4; white-space:nowrap;font-size:11px'>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</div>
+              <div class='tp-caption ExtraLargeTitle sft  tp-resizeme ' data-x='15'  data-y='80'  data-endspeed='500'  data-speed='500' data-start='1100' data-easing='Linear.easeNone' data-splitin='none' data-splitout='none' data-elementdelay='0.1' data-endelementdelay='0.1' style='z-index:2; white-space:nowrap;'><!-- BATHROOM INSPIRATION --></div>
+              <div    class='tp-caption LargeTitle sfl  tp-resizeme ' data-x='15'  data-y='135'  data-endspeed='500'  data-speed='500' data-start='1300' data-easing='Linear.easeNone' data-splitin='none' data-splitout='none' data-elementdelay='0.1' data-endelementdelay='0.1' style='z-index:3; white-space:nowrap;'><span><!-- BATHROOM --></span> <!-- IDEAS --></div>
+              <div    class='tp-caption sfb  tp-resizeme ' data-x='15'  data-y='360'  data-endspeed='500'  data-speed='500' data-start='1500' data-easing='Linear.easeNone' data-splitin='none' data-splitout='none' data-elementdelay='0.1' data-endelementdelay='0.1' style='z-index:4; white-space:nowrap;'><a href='#' class="view-more"><!-- View More --></a> <a href='#' class="buy-btn"><!-- Buy Now --></a></div>
+              <div    class='tp-caption Title sft  tp-resizeme ' data-x='15'  data-y='230'  data-endspeed='500'  data-speed='500' data-start='1500' data-easing='Power2.easeInOut' data-splitin='none' data-splitout='none' data-elementdelay='0.1' data-endelementdelay='0.1' style='z-index:4; white-space:nowrap;'><!-- In augue urna, nunc, tincidunt, augue,
+                augue facilisis facilisis. --></div>
+              <div    class='tp-caption Title sft  tp-resizeme ' data-x='15'  data-y='400'  data-endspeed='500'  data-speed='500' data-start='1500' data-easing='Power2.easeInOut' data-splitin='none' data-splitout='none' data-elementdelay='0.1' data-endelementdelay='0.1' style='z-index:4; white-space:nowrap;font-size:11px'><!-- Lorem ipsum dolor sit amet, consectetur adipiscing elit. --></div>
             </li>
           </ul>
           <div class="tp-bannertimer"></div>
@@ -98,7 +98,7 @@ images/slide-img2.jpg'  data-bgposition='left top'  data-bgfit='cover' data-bgre
   <!-- end header service --> 
   
   <!-- offer banner section -->
-  <div class="offer-banner-section">
+  <!-- <div class="offer-banner-section">
     <div class="container">
       <div class="row">
         <div class="col-lg-4 col-xs-12 col-md-4 col-sm-4 wow"><a href="#"><img alt="offer banner1" src="<?php echo $_smarty_tpl->tpl_vars['config']->value['url'];
@@ -112,7 +112,7 @@ echo $_smarty_tpl->tpl_vars['config']->value['dirtemp'];?>
 images/promo-banner3.jpg"></a></div>
       </div>
     </div>
-  </div>
+  </div> -->
   <!-- end offer banner section --> 
   <!-- main container -->
   <section class="main-container col1-layout home-content-container">
@@ -150,7 +150,7 @@ _<?php echo $_smarty_tpl->tpl_vars['sp']->value['id'];?>
                         <div class="actions">
                           <div class="actions-inner">
                             <button onclick="window.location.href='/order/<?php echo $_smarty_tpl->tpl_vars['sp']->value['id'];?>
-'" type="button" title="Thêm vào giỏ" class="button btn-cart"><span>Thêm vào giỏ</span></button>
+/1'" type="button" title="Thêm vào giỏ" class="button btn-cart"><span>Thêm vào giỏ</span></button>
                             <ul class="add-to-links">
                               <li><a href="<?php echo $_smarty_tpl->tpl_vars['model']->value->alias($_smarty_tpl->tpl_vars['sp']->value['tenSP']);?>
 _<?php echo $_smarty_tpl->tpl_vars['sp']->value['id'];?>
@@ -271,7 +271,8 @@ _<?php echo $_smarty_tpl->tpl_vars['sp']->value['id'];?>
                         </div>
                         <!--info-inner-->
                         <div class="actions">
-                          <button class="button btn-cart" title="Thêm vào giỏ" type="button"><span>Thêm vào giỏ</span></button>
+                          <button class="button btn-cart" onclick="window.location.href='/order/<?php echo $_smarty_tpl->tpl_vars['sp']->value['id'];?>
+/1'"  title="Thêm vào giỏ" type="button"><span>Thêm vào giỏ</span></button>
                         </div>
                         <!--actions-->
                         <div class="clearfix"> </div>
@@ -363,7 +364,8 @@ _<?php echo $_smarty_tpl->tpl_vars['sp']->value['id'];?>
                   </div>
                   <!--info-inner-->
                   <div class="actions">
-                    <button type="button" title="Thêm vào giỏ" class="button btn-cart"><span>Thêm vào giỏ</span></button>
+                    <button type="button" onclick="window.location.href='/order/<?php echo $_smarty_tpl->tpl_vars['sp']->value['id'];?>
+/1'"  title="Thêm vào giỏ" class="button btn-cart"><span>Thêm vào giỏ</span></button>
                   </div>
                   <!--actions-->
                   <div class="clearfix"> </div>
@@ -417,7 +419,8 @@ _<?php echo $_smarty_tpl->tpl_vars['sp']->value['id'];?>
 " /> </a>
                     <div class="actions">
                       <div class="actions-inner">
-                        <button type="button" title="Thêm vào giỏ" class="button btn-cart"><span>Thêm vào giỏ</span></button>
+                        <button type="button" onclick="window.location.href='/order/<?php echo $_smarty_tpl->tpl_vars['sp']->value['id'];?>
+/1'"  title="Thêm vào giỏ" class="button btn-cart"><span>Thêm vào giỏ</span></button>
                         <ul class="add-to-links">
                           <li><a href="<?php echo $_smarty_tpl->tpl_vars['model']->value->alias($_smarty_tpl->tpl_vars['sp']->value['tenSP']);?>
 _<?php echo $_smarty_tpl->tpl_vars['sp']->value['id'];?>

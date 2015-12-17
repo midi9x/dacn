@@ -1,4 +1,4 @@
-<?php /* Smarty version 3.1.27, created on 2015-11-22 13:43:32
+<?php /* Smarty version 3.1.27, created on 2015-12-14 06:26:00
          compiled from "C:\xampp\htdocs\dacn\configs\setting.dat" */ ?>
 <?php
 /*%%SmartyHeaderCode:%%*/
@@ -16,11 +16,11 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   'nocache_hash' => '',
   'has_nocache_code' => false,
   'version' => '3.1.27',
-  'unifunc' => 'content_5651b8743cec61_52508086',
+  'unifunc' => 'content_566e52e863e768_86745575',
 ),false);
 /*/%%SmartyHeaderCode%%*/
-if ($_valid && !is_callable('content_5651b8743cec61_52508086')) {
-function content_5651b8743cec61_52508086 ($_smarty_tpl) {
+if ($_valid && !is_callable('content_566e52e863e768_86745575')) {
+function content_566e52e863e768_86745575 ($_smarty_tpl) {
 
 Smarty_Internal_Extension_Config::loadConfigVars($_smarty_tpl, array (
   'sections' => 

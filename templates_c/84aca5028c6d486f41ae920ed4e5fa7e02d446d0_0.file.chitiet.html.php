@@ -1,7 +1,7 @@
-<?php /* Smarty version 3.1.27, created on 2015-11-22 13:28:43
+<?php /* Smarty version 3.1.27, created on 2015-12-11 11:21:26
          compiled from "templates\home\chitiet.html" */ ?>
 <?php
-/*%%SmartyHeaderCode:160185651b4fb050c95_10571612%%*/
+/*%%SmartyHeaderCode:23595566aa3a61d3d68_79624473%%*/
 if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
@@ -9,40 +9,60 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '84aca5028c6d486f41ae920ed4e5fa7e02d446d0' => 
     array (
       0 => 'templates\\home\\chitiet.html',
-      1 => 1448195321,
+      1 => 1449829221,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '160185651b4fb050c95_10571612',
+  'nocache_hash' => '23595566aa3a61d3d68_79624473',
   'variables' => 
   array (
     'chitiet' => 0,
+    'model' => 0,
+    'lct' => 0,
+    'config' => 0,
+    'id' => 0,
+    'loaisp' => 0,
     'hinhanh' => 0,
     'elem' => 0,
     'it' => 0,
     'mt' => 0,
+    'url' => 0,
     'spmoi' => 0,
     'sp' => 0,
-    'model' => 0,
   ),
   'has_nocache_code' => false,
   'version' => '3.1.27',
-  'unifunc' => 'content_5651b4fb20a373_13017125',
+  'unifunc' => 'content_566aa3a62a2e11_62926060',
 ),false);
 /*/%%SmartyHeaderCode%%*/
-if ($_valid && !is_callable('content_5651b4fb20a373_13017125')) {
-function content_5651b4fb20a373_13017125 ($_smarty_tpl) {
+if ($_valid && !is_callable('content_566aa3a62a2e11_62926060')) {
+function content_566aa3a62a2e11_62926060 ($_smarty_tpl) {
 
-$_smarty_tpl->properties['nocache_hash'] = '160185651b4fb050c95_10571612';
+$_smarty_tpl->properties['nocache_hash'] = '23595566aa3a61d3d68_79624473';
 ?>
+<?php echo '<script'; ?>
+ type="text/javascript" src="http://noithat.dev/templates/home/js/jquery.min.js"><?php echo '</script'; ?>
+> 
 <!-- breadcrumbs -->
 <div class="breadcrumbs">
 	<div class="container">
 		<div class="row">
 			<ul>
 				<li class="home"> <a href="index.html" title="Trang chủ">Trang chủ</a><span>/</span></li>
-				<li class=""> <a href="#" title="loại sp">Loại SP</a><span>/</span></li>
-				<li class="category13"><strong> Tên sp </strong></li>
+				<li class=""> 
+				<?php if (isset($_smarty_tpl->tpl_vars['chitiet']->value) && $_smarty_tpl->tpl_vars['chitiet']->value) {?>
+				<?php $_smarty_tpl->tpl_vars['id'] = new Smarty_Variable($_smarty_tpl->tpl_vars['chitiet']->value['id_loai'], null, 0);?>
+				<?php $_smarty_tpl->tpl_vars['lct'] = new Smarty_Variable($_smarty_tpl->tpl_vars['model']->value->selectone('loaisp',"id = '".((string)$_smarty_tpl->tpl_vars['id']->value)."'"), null, 0);?>
+				<?php $_smarty_tpl->tpl_vars['loaisp'] = new Smarty_Variable($_smarty_tpl->tpl_vars['lct']->value['tenLoai'], null, 0);?>
+				<a href="<?php echo $_smarty_tpl->tpl_vars['config']->value['url'];?>
+index.php?controller=loaisp&cat=<?php echo $_smarty_tpl->tpl_vars['id']->value;?>
+" title="<?php echo $_smarty_tpl->tpl_vars['loaisp']->value;?>
+"><?php echo $_smarty_tpl->tpl_vars['loaisp']->value;?>
+</a>
+				<span>/</span></li>
+				<li class="category13"><strong> <?php echo $_smarty_tpl->tpl_vars['chitiet']->value['tenSP'];?>
+ </strong></li>
+				<?php }?>
 			</ul>
 		</div>
 	</div>
@@ -56,7 +76,7 @@ $_smarty_tpl->properties['nocache_hash'] = '160185651b4fb050c95_10571612';
 			<div class="row">
 				<div class="product-view wow">
 					<div class="product-essential">
-						<form action="#" method="post" id="product_addtocart_form">
+						<form action="" method="post" id="product_addtocart_form">
 							<div class="product-img-box col-lg-6 col-sm-6 col-xs-12">
 								<ul class="moreview" id="moreview">
 									<?php
@@ -115,7 +135,9 @@ $_smarty_tpl->tpl_vars['elem'] = $foreach_elem_Sav;
 </h1>
 								</div>
 								<div class="ratings">
-									social button
+									 <img src="<?php echo $_smarty_tpl->tpl_vars['config']->value['url'];
+echo $_smarty_tpl->tpl_vars['config']->value['dirtemp'];?>
+images/like.png"/>
 								</div>
 								<p class="availability in-stock">
 									<span>
@@ -156,7 +178,7 @@ $_smarty_tpl->tpl_vars['elem'] = $foreach_elem_Sav;
 									<?php }?>
 
 									<?php if ($_smarty_tpl->tpl_vars['chitiet']->value['mauSon'] != '') {?>
-									<p>Màu sưn: <?php echo $_smarty_tpl->tpl_vars['chitiet']->value['mauSon'];?>
+									<p>Màu sơn: <?php echo $_smarty_tpl->tpl_vars['chitiet']->value['mauSon'];?>
 </p>
 									<?php }?>
 
@@ -172,7 +194,19 @@ $_smarty_tpl->tpl_vars['elem'] = $foreach_elem_Sav;
 												<button onClick="var result = document.getElementById('qty'); var qty = result.value; if( !isNaN( qty )) result.value++;return false;" class="increase items-count" type="button"><i class="icon-plus">&nbsp;</i></button>
 											</div>
 										</div>
-										<button onClick="productAddToCartForm.submit(this)" class="button btn-cart" title="Thêm vào giỏ" type="button"><span><i class="icon-basket"></i>Thêm vào giỏ</span></button>
+										<?php echo '<script'; ?>
+>
+											$(document).ready(function(e) {
+												$('#themvaogio').click(function(e) {
+													var qty = $('#qty').val();
+													window.location.href='/order/<?php echo $_smarty_tpl->tpl_vars['chitiet']->value['id'];?>
+/'+qty;
+												});
+											}); 		
+										<?php echo '</script'; ?>
+>
+
+										<button id="themvaogio"  class="button btn-cart" title="Thêm vào giỏ" type="button"><span><i class="icon-basket"></i>Thêm vào giỏ</span></button>
 									</div>
 								</div>
 							</form>
@@ -195,7 +229,19 @@ $_smarty_tpl->tpl_vars['elem'] = $foreach_elem_Sav;
 									</div>
 									<div class="tab-pane fade" id="reviews_tabs">
 										<div class="box-collateral box-reviews" id="customer-reviews">
-											Nhân xét đánh giá
+											<div id="fb-root"></div>
+											<?php echo '<script'; ?>
+>(function(d, s, id) {
+											  var js, fjs = d.getElementsByTagName(s)[0];
+											  if (d.getElementById(id)) return;
+											  js = d.createElement(s); js.id = id;
+											  js.src = "//connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v2.5&appId=1047043388690374";
+											  fjs.parentNode.insertBefore(js, fjs);
+											}(document, 'script', 'facebook-jssdk'));<?php echo '</script'; ?>
+>
+											<div class="fb-comments" data-href="<?php echo $_smarty_tpl->tpl_vars['url']->value;?>
+" data-width="1140" data-numposts="5"></div>
+
 										</div>
 									</div>
 									<div class="clear"></div>

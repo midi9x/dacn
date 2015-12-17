@@ -1,0 +1,276 @@
+<script type="text/javascript" src="{$config.url}{$config.dirtemp}js/jquery.min.js"></script> 
+<section class="main-container col1-layout">
+<div class="main container">
+  <div class="col-main">
+    <div class="cart wow">
+      <div class="page-title">
+        <h2>Giỏ hàng</h2>
+      </div>
+      {if count($giohang) >0}
+      <div class="table-responsive">
+        <form method="post"  action="index.php?controller=order">
+          <fieldset>
+            <table class="data-table cart-table" id="shopping-cart-table">
+              <thead>
+                <tr class="first last">
+                  <th rowspan="1">Hình ảnh</th>
+                  <th rowspan="2"><span class="nobr">Tên sản phẩm</span></th>
+                  <th colspan="1" class="a-center"><span class="nobr">Giá bán</span></th>
+                  <th class="a-center" rowspan="1">Số lượng</th>
+                  <th class="a-center" rowspan="1">Xóa</th>
+                </tr>
+              </thead>
+              <tfoot>
+                <tr class="first last">
+                  <td class="a-right last" colspan="50"><button onclick="window.location.href='{$config.url}'" class="button btn-continue" title="Tiếp tục mua sắm" type="button"><span><span>Tiếp tục mua sắm</span></span></button>
+                    <button id="btnCapnhat" class="button btn-update" title="Cập nhật giỏ hàng" value="update_qty" name="update_cart_action" type="submit"><span><span>Cập nhật giỏ hàng</span></span></button>
+                    <button  id="empty_cart_button" class="button btn-empty" title="Xóa giỏ hàng" value="empty_cart" name="update_cart_action" type="button"><span><span>Xóa  giỏ hàng</span></span></button></td>
+                </tr>
+              </tfoot>
+              <tbody>
+              {$tongtien=0}
+              {foreach $giohang as $id=>$sl}
+              {$detail=$model->selectone('sanpham',"id=$id")}
+              {$tonggia=$detail.donGia * $sl}
+              {$tongtien=$tongtien + $tonggia}
+                <tr>
+                  <td class="image"><img width="75" alt="{$detail.tenSP}" src="{$detail.hinhAnh}"></td>
+                  <td><h2 class="product-name"> <a target="_blank" title="{$detail.tenSP}" href="{$model->alias($detail.tenSP)}_{$detail.id}.html"> {$detail.tenSP}</a> </h2></td>
+                  
+                  <td class="a-right"><span class="cart-price"> <span class="price">{$detail.donGia|number_format} VND</span> </span></td>
+                  <td class="a-center movewishlist"><input maxlength="12" class="input-text qty" title="Số lượng" value="{$sl}" name="sl{$id}" size="3" id="sl{$id}"></td>
+                  
+                  <td class="a-center last">
+                  <button value="{$id}" type="button" class="btndel button remove-item" title="Xóa"><span>Xóa</span></button>
+                  
+                  </td>
+                </tr>
+              {/foreach}     
+              </tbody>
+            </table>
+            <script>
+            $(document).ready(function(e) {
+              $('.btndel').click(function(e) {
+                  var kq=confirm('Bạn có chắc muốn xóa?')
+              if(kq)
+              {
+                var id=$(this).val();//Lấy dc ID
+                $('#sl'+id).val(0);//Thay đổi số lượng là 0
+                $('#btnCapnhat').click();//Click vào nút cập nhật
+              }
+              });
+            ///////////////
+            $('#btndathang').click(function(e) {
+                  $('#dathang').slideToggle();
+              });
+            $('#empty_cart_button').click(function(e) {
+              var kq=confirm('Bạn có chắc muốn xóa?')
+              if(kq)
+              {
+                $('.qty').val(0);
+                $('#btnCapnhat').click();
+              }
+              });
+            });
+
+            </script>
+          </fieldset>
+        </form>
+      </div>
+      <script>
+        $(document).ready(function(e){
+          $('#btncheckout').click(function(e){
+            tenDN = $('#tenDN').val();
+            matKhau = $('#matKhau').val();
+            rematKhau = $('#rematKhau').val();
+            if(tenDN.length<6){
+              alert('Tên đăng nhập phải lớn hơn 6 ký tự');
+              return false;
+            }
+            if(matKhau.length<6){
+              alert('Mật khẩu phải lớn hơn 6 ký tự');
+              return false;
+            }
+            if(matKhau!=rematKhau){
+              alert('Mật khẩu không trùng khớp');
+              return false;
+            }
+          });
+        });
+      </script>
+      <!-- BEGIN CART COLLATERALS -->
+      <div class="cart-collaterals row">
+        <div class="col-sm-8">
+          <div class="shipping" id="dathang" style="display:none;">
+            <h3>Thông tin đơn đặt hàng </h3>
+            <div class="shipping-form">
+              <form id="shipping-zip-form" method="post" action="index.php?controller=checkout" data-toggle="validator">
+              <input type="hidden" name="tongtien" value="{$tongtien}" />
+              {if !isset($khachhang)}
+                <p style="">Vui lòng đăng ký thông tin để đặt hàng. 
+                Nếu bạn đã có tài khoản khách hàng tại NoiThat.Dev! <a style="color: #337ab7;font-weight: bold;" href="login.html">Click vào đây để đăng nhập</a></p>
+              {else}
+                <p>Xin chào {$khachhang.tenDN}, Vui lòng xác nhận thông tin đơn đặt hàng</p>
+              {/if}
+                <ul class="form-list">
+                  {if !isset($khachhang)}
+                  <li>
+                    <label for="postcode">Tên đăng nhập <span style="color:red"> *</span></label>
+                    <div class="input-box">
+                      <input type="text" name="tenDN" id="tenDN" class="input-text" required/>
+                    </div>
+                  </li>
+                  <li>
+                    <label for="postcode">Mật khẩu <span style="color:red"> *</span></label>
+                    <div class="input-box">
+                      <input type="password" name="matKhau" id="matKhau" class="input-text" required/>
+                    </div>
+                  </li>
+                  <li>
+                    <label for="postcode">Nhập lại mật khẩu <span style="color:red"> *</span></label>
+                    <div class="input-box">
+                      <input type="password" data-match="#matKhau" name="rematKhau" id="rematKhau" class="input-text" required/>
+                    </div>
+                  </li>
+                  {/if}
+
+                  <li>
+                    <label for="postcode">Họ và tên <span style="color:red"> *</span></label>
+                    <div class="input-box">
+                      <input type="text" value="{if isset($khachhang)}{$khachhang.tenKH} {/if}" name="hoTen" id="hoTen" class="input-text" required/> 
+                    </div>
+                  </li>
+
+                  <li>
+                    <label for="postcode">Số điện thoại <span style="color:red"> *</span></label>
+                    <div class="input-box">
+                      <input type="text" value="{if isset($khachhang)}{$khachhang.dienThoai} {/if}" name="dienThoai" id="dienThoai" class="input-text" required/>
+                    </div>
+                  </li>
+
+                  <li>
+                    <label for="postcode">Địa chỉ nhận<span style="color:red"> *</span></label>
+                    <div class="input-box">
+                      <input type="text" value="{if isset($khachhang)}{$khachhang.diaChi} {/if}" name="diaChi" id="diaChi" class="input-text" required/>
+                    </div>
+                  </li>
+
+                  <li>
+                    <label for="postcode">Email <span style="color:red"> *</span></label>
+                    <div class="input-box">
+                      <input type="email" value="{if isset($khachhang)}{$khachhang.email} {/if}" name="email" id="email" class="input-text" required/>
+                    </div>
+                  </li>
+                  {if !isset($khachhang)}
+                  <li>
+                    <label for="postcode">Ngày sinh </label>
+                    <div class="input-box">
+                      <input type="date"  name="ngaySinh" id="ngaySinh" class="input-text"/
+                      >
+                    </div>
+                  </li>
+                  <li>
+                    <label for="postcode">Giới tính </label>
+                    <div class="input-box">
+                      <select class="input-text" name="gioiTinh" id="gioiTinh">
+                        <option value="1">Nam</option>
+                        <option value="0">Nữ</option>
+                      </select>
+                    </div>
+                  </li>
+                  {/if}
+                  <li>
+                    <label for="postcode">Ghi chú</label>
+                    <div class="input-box">
+                      <textarea rows="4" style="width: 675px;" name="ghiChu" id="ghiChu" class="input-text"></textarea>
+                    </div>
+                  </li>
+                </ul>
+
+                <div class="buttons-set11">
+                  <button class="button btn btn-default" id="btncheckout"  name="btncheckout" type="submit"><span class="glyphicon glyphicon-ok">Xácnhận</span></button>
+                </div>
+                <!--buttons-set11-->
+              </form>
+            </div>
+            
+          </div>
+        </div>
+
+        <div class="totals col-sm-4">
+        <h4>
+          <table class="table shopping-cart-table-total" id="shopping-cart-totals-table">
+            <tr>
+              <td>Tổng tiền: </td>
+              <td><span class="price" style="font-weight:bold">{$tongtien|number_format} VND</span><td>
+            </tr>
+          </table>
+        </h4>
+            <ul class="checkout">
+              <li>
+                <button id="btndathang" class="button btn-proceed-checkout" title="Đặt hàng" type="button"><span>Đặt hàng</span></button>
+              </li>
+              <br>
+            </ul>
+          
+        </div>
+      </div>
+      {else}
+      <div class="table-responsive">
+      Chưa có sản phẩm nào trong giỏ hàng
+      </div>
+      {/if}
+    </div>
+    <div class="crosssel">
+      <div class="new_title center">
+        <h2>Sản phẩm đã xem</h2>
+      </div>
+      <div class="category-products">
+        <ul id="crosssell-products-list" class="products-grid first odd">
+          {foreach $danhsach as $sp}
+              <li class="item col-md-3 col-sm-6 col-xs-6">
+                <div class="col-item">
+                  <div class="sale-label sale-top-right">Hot</div>
+                  <div class="images-container"> <a class="product-image" title="{$sp.tenSP}" href="{$model->alias($sp.tenSP)}_{$sp.id}.html"> <img src="{$sp.hinhAnh}" class="img-responsive" alt="{$sp.tenSP}" style="width:262px;height:318px;" /> </a>
+                    <div class="actions">
+                      <div class="actions-inner">
+                        <button onclick="window.location.href='/order/{$sp.id}/1'" type="button" title="Thêm vào giỏ" class="button btn-cart"><span>Thêm vào giỏ</span></button>
+                        <ul class="add-to-links">
+                          <li><a href="{$model->alias($sp.tenSP)}_{$sp.id}.html" title="" class="link-wishlist"><span><!-- Add to Wishlist --></span></a></li>
+                          <li><a href="{$model->alias($sp.tenSP)}_{$sp.id}.html" title="" class="link-compare "><span><!-- Add to Compare --></span></a></li>
+                        </ul>
+                      </div>
+                    </div>
+                    <div class="qv-button-container"> <a href="{$model->alias($sp.tenSP)}_{$sp.id}.html" class="qv-e-button btn-quickview-1"><span><span></span></span></a> </div>
+                  </div>
+                  <div class="info">
+                    <div class="info-inner">
+                      <div class="item-title"> <a title="{$sp.tenSP}" href="{$model->alias($sp.tenSP)}_{$sp.id}.html">{$sp.tenSP}</a> </div>
+                      <!--item-title-->
+                      <div class="item-content">
+                        <div class="ratings">
+                          <div class="rating-box">
+                            <div style="width:60%" class="rating"></div>
+                          </div>
+                        </div>
+                        <div class="price-box">
+                          <p class="special-price"> <span class="price"> {$sp.donGia|number_format} VND  </span> </p>
+                          <!--  <p class="old-price"> <span class="price-sep">-</span> <span class="price"> {$sp.donGia}</span> </p> -->
+                        </div>
+                      </div>
+                      <!--item-content--> 
+                    </div>
+                    <!--info-inner--> 
+                    
+                    <!--actions-->
+                    <div class="clearfix"> </div>
+                  </div>
+                </div>
+              </li>
+              {/foreach}
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
