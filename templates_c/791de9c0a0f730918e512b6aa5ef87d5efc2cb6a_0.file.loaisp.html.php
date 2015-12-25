@@ -1,7 +1,7 @@
-<?php /* Smarty version 3.1.27, created on 2015-12-08 10:21:03
+<?php /* Smarty version 3.1.27, created on 2015-12-20 12:24:24
          compiled from "C:\xampp\htdocs\dacn\templates\admin\loaisp.html" */ ?>
 <?php
-/*%%SmartyHeaderCode:1477856664c9fcc6f56_22603970%%*/
+/*%%SmartyHeaderCode:722556763b88594bb3_81677818%%*/
 if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
@@ -9,11 +9,11 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '791de9c0a0f730918e512b6aa5ef87d5efc2cb6a' => 
     array (
       0 => 'C:\\xampp\\htdocs\\dacn\\templates\\admin\\loaisp.html',
-      1 => 1448363704,
+      1 => 1450589062,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '1477856664c9fcc6f56_22603970',
+  'nocache_hash' => '722556763b88594bb3_81677818',
   'variables' => 
   array (
     'link' => 0,
@@ -26,13 +26,13 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'has_nocache_code' => false,
   'version' => '3.1.27',
-  'unifunc' => 'content_56664c9fd4faf6_75424540',
+  'unifunc' => 'content_56763b88611bd9_53864660',
 ),false);
 /*/%%SmartyHeaderCode%%*/
-if ($_valid && !is_callable('content_56664c9fd4faf6_75424540')) {
-function content_56664c9fd4faf6_75424540 ($_smarty_tpl) {
+if ($_valid && !is_callable('content_56763b88611bd9_53864660')) {
+function content_56763b88611bd9_53864660 ($_smarty_tpl) {
 
-$_smarty_tpl->properties['nocache_hash'] = '1477856664c9fcc6f56_22603970';
+$_smarty_tpl->properties['nocache_hash'] = '722556763b88594bb3_81677818';
 ?>
 <?php echo '<script'; ?>
 >
@@ -84,20 +84,20 @@ admin/index.php">Home</a>
             <div class="form-group">
                 <label for="tenLoai" class="col-sm-3 control-label">Tên loại</label>
                 <div class="col-sm-9">
-                    <input type="text"  class="form-control" name="tenLoai" id="tenLoai" placeholder="">
+                    <input type="text"  class="form-control" name="tenLoai" id="tenLoai" placeholder="" required> 
                 </div>
             </div>
             <div class="form-group">
                 <label for="moTamoTamoTa" class="col-sm-3 control-label">Mô tả</label>
                 <div class="col-sm-9">
-                    <textarea class="form-control" name="moTa" id="moTa"  rows="8"></textarea>
+                    <textarea class="form-control" name="moTa" id="moTa"  rows="8" required></textarea>
                 </div>
             </div>
 
             <div class="form-group">
                 <label for="tuKhoa" class="col-sm-3 control-label">Từ khóa</label>
                 <div class="col-sm-9">
-                    <textarea class="form-control" name="tuKhoa" id="tuKhoa" rows="7"></textarea>
+                    <textarea class="form-control" name="tuKhoa" id="tuKhoa" rows="7" required></textarea>
                 </div>
             </div>
 

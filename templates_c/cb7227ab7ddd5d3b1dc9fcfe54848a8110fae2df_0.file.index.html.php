@@ -1,7 +1,7 @@
-<?php /* Smarty version 3.1.27, created on 2015-12-09 21:25:44
+<?php /* Smarty version 3.1.27, created on 2015-12-24 21:29:10
          compiled from "C:\xampp\htdocs\dacn\templates\admin\index.html" */ ?>
 <?php
-/*%%SmartyHeaderCode:9697566839e88efd68_66445927%%*/
+/*%%SmartyHeaderCode:1358567c0136972549_91490769%%*/
 if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
@@ -9,11 +9,11 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'cb7227ab7ddd5d3b1dc9fcfe54848a8110fae2df' => 
     array (
       0 => 'C:\\xampp\\htdocs\\dacn\\templates\\admin\\index.html',
-      1 => 1449671144,
+      1 => 1450967346,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '9697566839e88efd68_66445927',
+  'nocache_hash' => '1358567c0136972549_91490769',
   'variables' => 
   array (
     'title' => 0,
@@ -24,13 +24,13 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'has_nocache_code' => false,
   'version' => '3.1.27',
-  'unifunc' => 'content_566839e89da3a1_50816315',
+  'unifunc' => 'content_567c0136a26078_54612159',
 ),false);
 /*/%%SmartyHeaderCode%%*/
-if ($_valid && !is_callable('content_566839e89da3a1_50816315')) {
-function content_566839e89da3a1_50816315 ($_smarty_tpl) {
+if ($_valid && !is_callable('content_567c0136a26078_54612159')) {
+function content_567c0136a26078_54612159 ($_smarty_tpl) {
 
-$_smarty_tpl->properties['nocache_hash'] = '9697566839e88efd68_66445927';
+$_smarty_tpl->properties['nocache_hash'] = '1358567c0136972549_91490769';
 ?>
 <!DOCTYPE html>
 <html lang="vi">
@@ -39,7 +39,6 @@ $_smarty_tpl->properties['nocache_hash'] = '9697566839e88efd68_66445927';
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
     <title><?php echo $_smarty_tpl->tpl_vars['title']->value;?>
 </title>
-    
     <link href="<?php echo $_smarty_tpl->tpl_vars['config']->value['url'];?>
 templates/admin/css/bootstrap.min.css" rel="stylesheet"/>
     <link href="<?php echo $_smarty_tpl->tpl_vars['config']->value['url'];?>
@@ -116,7 +115,7 @@ admin/index.php">Trang quản trị</a>
  <b class="caret"></b></a>
                     <ul class="dropdown-menu">
                         <li>
-                            <a href="#"><i class="fa fa-fw fa-user"></i> Cá nhân</a>
+                            <a href="#"><i class="fa fa-fw fa-user"></i> Cài đặt</a>
                         </li>
                         <li class="divider"></li>
                         <li>

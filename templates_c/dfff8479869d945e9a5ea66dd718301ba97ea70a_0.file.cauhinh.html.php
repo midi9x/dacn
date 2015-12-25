@@ -1,7 +1,7 @@
-<?php /* Smarty version 3.1.27, created on 2015-12-08 12:45:51
+<?php /* Smarty version 3.1.27, created on 2015-12-20 12:22:38
          compiled from "C:\xampp\htdocs\dacn\templates\admin\cauhinh.html" */ ?>
 <?php
-/*%%SmartyHeaderCode:25056666e8f5b5f83_82055002%%*/
+/*%%SmartyHeaderCode:1487456763b1ef21f05_53338579%%*/
 if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
@@ -9,24 +9,24 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'dfff8479869d945e9a5ea66dd718301ba97ea70a' => 
     array (
       0 => 'C:\\xampp\\htdocs\\dacn\\templates\\admin\\cauhinh.html',
-      1 => 1448795365,
+      1 => 1450588957,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '25056666e8f5b5f83_82055002',
+  'nocache_hash' => '1487456763b1ef21f05_53338579',
   'variables' => 
   array (
     'config' => 0,
   ),
   'has_nocache_code' => false,
   'version' => '3.1.27',
-  'unifunc' => 'content_56666e90149519_38528714',
+  'unifunc' => 'content_56763b1f016617_32609315',
 ),false);
 /*/%%SmartyHeaderCode%%*/
-if ($_valid && !is_callable('content_56666e90149519_38528714')) {
-function content_56666e90149519_38528714 ($_smarty_tpl) {
+if ($_valid && !is_callable('content_56763b1f016617_32609315')) {
+function content_56763b1f016617_32609315 ($_smarty_tpl) {
 
-$_smarty_tpl->properties['nocache_hash'] = '25056666e8f5b5f83_82055002';
+$_smarty_tpl->properties['nocache_hash'] = '1487456763b1ef21f05_53338579';
 ?>
 <div class="row">
     <div class="col-lg-12">
@@ -48,28 +48,28 @@ admin/index.php">Home</a>
   <div class="form-group">
     <label for="txtUrl" class="col-sm-2 control-label">Địa chỉ trang web</label>
     <div class="col-sm-10">
-      <input type="url" class="form-control" name="txtUrl" id="txtUrl" placeholder="Ví dụ: http://noithat.com">
+      <input type="url" class="form-control" name="txtUrl" id="txtUrl" value="http://noithat.dev">
     </div>
   </div>
 
   <div class="form-group">
     <label for="" class="col-sm-2 control-label">Tiêu đề trang web</label>
     <div class="col-sm-10">
-      <input type="text" class="form-control" name="" id="" placeholder="Ví dụ: Nội Thất Đồ Gỗ Đẹp Giá Rẻ | Nội Thất Cao Cấp">
+      <input type="text" class="form-control" name="" id="" value="Đồ gỗ nội thất cao cấp tại Hà Nội">
     </div>
   </div>
 
   <div class="form-group">
     <label for="" class="col-sm-2 control-label">Mô tả</label>
     <div class="col-sm-10">
-      <textarea class="form-control" name="" id="" rows="3" placeholder="Ví dụ: Nhà sản xuất phân phối sỉ lẻ đồ gỗ nội thất cao cấp, giá thành rẻ,dịch vụ chuyên nghiệp,nhiều mẫu đẹp. Liên hệ 0918369678"></textarea>
+      <textarea class="form-control" name="" id="" rows="3" value="">Nội thất đồ gỗ phòng khách, phòng ngủ, khách sạn, văn phòng, giường, tủ, bàn, ghế, kệ, mẫu mã cực kỳ đa dạng. Đồ gỗ nội thất uy tín, giá cả hợp lý, Chất lượng dịch vụ hoàn hảo.</textarea>
     </div>
   </div>
 
   <div class="form-group">
     <label for="" class="col-sm-2 control-label">Từ khóa</label>
     <div class="col-sm-10">
-      <input type="text" class="form-control" name="" id="" placeholder="Ví dụ: đồ gỗ nội thât, cơ sở sản xuất đồ gỗ, cơ sở sản xuất đồ mộc, co so do go, đồ gỗ, nội thất">
+      <input type="text" class="form-control" name="" id="" value="Đồ gỗ nội thât, cơ sở sản xuất đồ gỗ, cơ sở sản xuất đồ mộc, co so do go, đồ gỗ, nội thất">
     </div>
   </div>
 

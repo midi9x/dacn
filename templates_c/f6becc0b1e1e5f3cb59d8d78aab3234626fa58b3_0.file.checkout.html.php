@@ -1,7 +1,7 @@
-<?php /* Smarty version 3.1.27, created on 2015-12-08 05:23:11
+<?php /* Smarty version 3.1.27, created on 2015-12-24 15:25:53
          compiled from "templates\home\checkout.html" */ ?>
 <?php
-/*%%SmartyHeaderCode:3077856665b2ff02331_49899962%%*/
+/*%%SmartyHeaderCode:22734567c0071d80679_85940506%%*/
 if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
@@ -9,11 +9,11 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'f6becc0b1e1e5f3cb59d8d78aab3234626fa58b3' => 
     array (
       0 => 'templates\\home\\checkout.html',
-      1 => 1449482485,
+      1 => 1450967139,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '3077856665b2ff02331_49899962',
+  'nocache_hash' => '22734567c0071d80679_85940506',
   'variables' => 
   array (
     'chitiet' => 0,
@@ -27,13 +27,13 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'has_nocache_code' => false,
   'version' => '3.1.27',
-  'unifunc' => 'content_56665b300a66f2_39900108',
+  'unifunc' => 'content_567c0071df9810_98239271',
 ),false);
 /*/%%SmartyHeaderCode%%*/
-if ($_valid && !is_callable('content_56665b300a66f2_39900108')) {
-function content_56665b300a66f2_39900108 ($_smarty_tpl) {
+if ($_valid && !is_callable('content_567c0071df9810_98239271')) {
+function content_567c0071df9810_98239271 ($_smarty_tpl) {
 
-$_smarty_tpl->properties['nocache_hash'] = '3077856665b2ff02331_49899962';
+$_smarty_tpl->properties['nocache_hash'] = '22734567c0071d80679_85940506';
 ?>
 
 <?php if (isset($_smarty_tpl->tpl_vars['chitiet']->value)) {?>
@@ -43,7 +43,8 @@ $_smarty_tpl->properties['nocache_hash'] = '3077856665b2ff02331_49899962';
       <section class="col-main col-sm-9 wow">
         <div class="my-account">
           <div class="page-title">
-            <h2>Thông tin đơn đặt hàng</h2>
+            <h2>Thông tin đơn đặt hàng #<?php echo $_smarty_tpl->tpl_vars['chitiet']->value['id'];?>
+</h2>
           </div>
           <div class="dashboard">
             <div class="welcome-msg"> <strong>Xin chào, <?php echo $_smarty_tpl->tpl_vars['khachhang']->value['tenDN'];?>
@@ -176,10 +177,14 @@ $_smarty_tpl->tpl_vars['sl'] = $foreach_sl_Sav;
         <div class="block-title">Tài khoản</div>
         <div class="block-content">
           <ul>
-            <li class="current"><a>Tài khoản</a></li>
-            <li><a href="">Tài khoản</a></li>
-
-          </ul>
+              <li class="current"><a href="<?php echo $_smarty_tpl->tpl_vars['config']->value['url'];?>
+taikhoan.html">Thông tin cá nhân</a></li>
+              <li><a href="<?php echo $_smarty_tpl->tpl_vars['config']->value['url'];?>
+taikhoan.html#donhang" >Đơn hàng đã đặt</a></li>
+              <li><a href="doimatkhau.html">Đổi mật khẩu</a></li>
+              <li><a href="doithongtin.html">Đổi thông tin</a></li>
+              <li><a href="logout.html">Thoát</a></li>
+            </ul>
         </div>
       </div>
     </aside>

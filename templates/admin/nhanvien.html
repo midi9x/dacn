@@ -1,5 +1,5 @@
 <div class="row">
-    <div class="col-lg-8">
+    <div class="col-lg-12">
         <div class="page-header">
             <h3>
                 <ol class="breadcrumb">
@@ -13,12 +13,12 @@
             </h3>
         </div>
     </div>
-    <div class="col-lg-4">
+    <!-- <div class="col-lg-4">
         <div class="page-header">
             <a href="{$config.url}admin/index.php?controller=nhanvien&action=them" class="btn btn-success"><i class="glyphicon glyphicon-plus"></i> Thêm mới </a> 
             <button onclick="return confirm('Bạn có muốn xóa');" type="button" class="btn btn-danger"><i class="glyphicon glyphicon-remove"></i> Khóa mục chọn</button>
         </div>
-    </div>
+    </div> -->
 
 </div>
 <!-- /.row -->
@@ -72,8 +72,8 @@
                         <td>{$item.quyen}</td>
                         <td>{$item.tinhTrang}</td>
                         <td colspan="2">
-                            <a href="#" class="btn btn-warning"><i class="glyphicon glyphicon-pencil"></i> Sửa </a>
-                            <a href="#" onclick="return confirm('Bạn có muốn xóa');" type="button" class="btn btn-danger"><i class="glyphicon glyphicon-remove"></i> Khóa</a>
+                            <!-- <a href="#" class="btn btn-warning"><i class="glyphicon glyphicon-pencil"></i> Sửa </a> -->
+                            <a href="index.php?controller=nhanvien&action=xoa&id={$item.id}" onclick="return confirm('Bạn có muốn xóa');" type="button" class="btn btn-danger"><i class="glyphicon glyphicon-remove"></i> Khóa</a>
                         </td>
                     </tr>
 

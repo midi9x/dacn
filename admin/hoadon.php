@@ -8,6 +8,8 @@ if($action =='xacnhan' && isset($_GET['id']))
 {
 	$id=$_GET['id'];
 	$_POST['tinhTrang']=1;
+	$nhanvien  = $_SESSION["adminlogin"];
+	$_POST['id_nv']=$nhanvien['id'];
 	$sua = $model->update('hoadon',$_POST,$id);
 	header('Location: '.$link);
 }

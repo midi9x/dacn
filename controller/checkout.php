@@ -35,6 +35,7 @@ if(isset($_POST['btncheckout'])){
 		foreach($_SESSION['cart'] as $id=>$sl)
 		{
 			$detail=$model->selectone('sanpham'," id=$id");//Lấy thông tin sản phẩm
+			$model->updatesl($id,$sl);//update so luong sp
 			//Xây dựng mảng dữ liệu để lưu vào bảng chi tiết hóa đơn
 			$add['id_sp']=$id;
 			$add['id_dh']=$iddh;

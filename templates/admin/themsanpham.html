@@ -17,7 +17,7 @@
   <div class="form-group">
     <label for="tenSP" class="col-sm-2 control-label">Tên sản phẩm <span class="required">*</span></label>
     <div class="col-sm-10">
-      <input type="text" class="form-control" name="tenSP" id="tenSP" placeholder="">
+      <input type="text" class="form-control" name="tenSP" id="tenSP" placeholder="" required>
     </div>
   </div>
 
@@ -35,19 +35,19 @@
   <div class="form-group">
     <label for="hinhAnh" class="col-sm-2 control-label">Ảnh đại diện <span class="required">*</span></label>
     <div class="col-sm-10">
-      <input class="form-control" name="hinhAnh" id="hinhAnh" type="file" />
+      <input class="form-control" name="hinhAnh" id="hinhAnh" type="file" required/>
     </div>
   </div>
 
   <div class="form-group">
     <label for="donGia" class="col-sm-2 control-label">Đơn giá <span class="required">*</span></label>
     <div class="col-sm-4">
-      <input type="number" class="form-control" name="donGia" id="donGia" placeholder="">
+      <input type="number" class="form-control" name="donGia" id="donGia" placeholder="" required/> 
     </div>
 
     <label for="soLuong" class="col-sm-2 control-label">Số lượng <span class="required">*</span></label>
     <div class="col-sm-4 ">
-      <input type="number" class="form-control" name="soLuong" id="soLuong" placeholder="">
+      <input type="number" class="form-control" name="soLuong" id="soLuong" placeholder="" required>
     </div>
   </div>
 
@@ -78,15 +78,22 @@
   <div class="form-group">
     <label for="moTa" class="col-sm-2 control-label">Mô tả sản phẩm <span class="required">*</span></label>
     <div class="col-sm-10">
-      <textarea class="form-control" name="moTa" id="moTa" rows="3" placeholder=""></textarea>
+      <textarea required class="form-control" name="moTa" id="moTa" rows="3" placeholder=""></textarea>
       <script>CKEDITOR.replace('moTa'); </script>
     </div>
   </div>
-
+  <script type="text/javascript">
+    $("form").submit( function() {
+        var messageLength = CKEDITOR.instances['moTa'].getData().replace(/<[^>]*>/gi, '').length;
+        if( !messageLength ) {
+            alert( 'Please enter a message' );
+        }
+    }
+</script>
   <div class="form-group">
     <label for="tuKhoa" class="col-sm-2 control-label">Từ khóa <span class="required">*</span></label>
     <div class="col-sm-10">
-      <input type="text" class="form-control" name="tuKhoa" id="tuKhoa" placeholder="">
+      <input type="text" class="form-control" name="tuKhoa" id="tuKhoa" placeholder="" required>
     </div>
   </div>
   

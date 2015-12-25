@@ -1,7 +1,7 @@
-<?php /* Smarty version 3.1.27, created on 2015-12-08 10:21:14
+<?php /* Smarty version 3.1.27, created on 2015-12-20 20:04:08
          compiled from "C:\xampp\htdocs\dacn\templates\admin\sanpham.html" */ ?>
 <?php
-/*%%SmartyHeaderCode:2339156664caa7c4305_10135477%%*/
+/*%%SmartyHeaderCode:20035676a7485e1a33_63883837%%*/
 if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
@@ -9,11 +9,11 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '34aeffd183b1b59a606c929cccd188b5138912d0' => 
     array (
       0 => 'C:\\xampp\\htdocs\\dacn\\templates\\admin\\sanpham.html',
-      1 => 1447294537,
+      1 => 1450616646,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '2339156664caa7c4305_10135477',
+  'nocache_hash' => '20035676a7485e1a33_63883837',
   'variables' => 
   array (
     'link' => 0,
@@ -25,13 +25,13 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'has_nocache_code' => false,
   'version' => '3.1.27',
-  'unifunc' => 'content_56664caa979b62_05710996',
+  'unifunc' => 'content_5676a748656d58_56305629',
 ),false);
 /*/%%SmartyHeaderCode%%*/
-if ($_valid && !is_callable('content_56664caa979b62_05710996')) {
-function content_56664caa979b62_05710996 ($_smarty_tpl) {
+if ($_valid && !is_callable('content_5676a748656d58_56305629')) {
+function content_5676a748656d58_56305629 ($_smarty_tpl) {
 
-$_smarty_tpl->properties['nocache_hash'] = '2339156664caa7c4305_10135477';
+$_smarty_tpl->properties['nocache_hash'] = '20035676a7485e1a33_63883837';
 ?>
 <form action="<?php echo $_smarty_tpl->tpl_vars['link']->value;?>
 " method="post">
@@ -58,7 +58,7 @@ admin/index.php">Home</a>
     <div class="col-lg-6">
             <div class="input-group">
                 <span class="input-group-addon " id="basic-addon1">Tìm kiếm sản phẩm</span>
-                <input type="text" class="form-control" placeholder="Ví dụ: Giường ngủ" aria-describedby="basic-addon1" >
+                <input type="text" class="form-control" placeholder="Ví dụ: Giường ngủ" aria-describedby="basic-addon1" required/>
                 <span class="input-group-btn">
                     <button class="btn btn-primary" type="button"><i class="glyphicon glyphicon-search"></i>  Tìm</button>
                 </span>
@@ -107,7 +107,7 @@ admin/index.php?controller=sanpham&action=them" class="btn btn-success"><i class
             <table class="table table-bordered table-hover">
                 <thead>
                     <tr>
-                        
+                        <th>#</th>
                         <th>Tên sản phẩm</th>
                         <th>Hình ảnh</th>
                         <th>Đơn giá</th>
@@ -132,7 +132,8 @@ $_smarty_tpl->tpl_vars['item']->_loop = true;
 $foreach_item_Sav = $_smarty_tpl->tpl_vars['item'];
 ?>
                     <tr>
-                        
+                        <td><?php echo $_smarty_tpl->tpl_vars['item']->value['id'];?>
+</td>
                         <td><?php echo $_smarty_tpl->tpl_vars['item']->value['tenSP'];?>
 </td>
                         <td><img src="<?php echo $_smarty_tpl->tpl_vars['item']->value['hinhAnh'];?>

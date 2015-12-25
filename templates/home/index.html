@@ -3,8 +3,10 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="{$config.url}favicon.ico" />
-  <title>{if isset($title)}{$title} - Đồ gỗ nội thất{else}Đồ gỗ nội thất {/if}</title>
+  <link rel="shortcut icon" href="{$config.url}favicon.ico" />
+  <title>{if isset($title)}{$title} {else}Nội thất Duy Tân | Đồ gỗ nội thất cao cấp {/if}</title>
+  <meta name="description" content="Nội thất đồ gỗ phòng khách, phòng ngủ, khách sạn, văn phòng, giường, tủ, bàn, ghế, kệ, mẫu mã cực kỳ đa dạng. Đồ gỗ nội thất uy tín, giá cả hợp lý, Chất lượng dịch vụ hoàn hảo."/>
+  <meta name="keywords" content="Đồ gỗ nội thât, cơ sở sản xuất đồ gỗ, cơ sở sản xuất đồ mộc, co so do go, đồ gỗ, nội thất"/>
   <link rel="stylesheet" href="{$config.url}{$config.dirtemp}css/bootstrap.min.css" type="text/css">
   <link rel="stylesheet" href="{$config.url}{$config.dirtemp}css/style.css" type="text/css">
   <link rel="stylesheet" href="{$config.url}{$config.dirtemp}css/revslider.css" type="text/css">
@@ -46,7 +48,7 @@
       <div class="row">
         <div class="col-lg-2 col-sm-3 col-md-2 col-xs-12"> 
           <!-- Header Logo --> 
-          <a class="logo" title="Magento Commerce" href="{$config.url}"><img alt="/" src="{$config.url}{$config.dirtemp}images/logo.png"></a> 
+          <a class="logo" title="Magento Commerce" href="{$config.url}"><img alt="/" src="{$config.url}{$config.dirtemp}images/logo.png" width="130"></a> 
           <!-- End Header Logo --> 
         </div>
         <div class="col-lg-7 col-sm-4 col-md-6 col-xs-12"> 
@@ -124,7 +126,7 @@
         </div>
         <!--End mobile-menu --> 
 
-        <a class="logo-small" title="Đồ gỗ nội thất" href="{$config.url}"><img alt="Đồ gỗ nội thất" src="{$config.url}{$config.dirtemp}images/logo-small.png"></a>
+        <a class="logo-small" title="Đồ gỗ nội thất" href="{$config.url}"><img alt="Đồ gỗ nội thất" src="{$config.url}{$config.dirtemp}images/logo.png" width="75"></a>
         <ul id="nav" class="hidden-xs">
           <li class="level0 parent drop-menu">
           <a href="{$config.url}" class="active"><span>Trang chủ</span> </a>
@@ -143,8 +145,8 @@
    
     <div class="footer-middle container">
       <div class="col-md-3 col-sm-4">
-        <div class="footer-logo"><a href="/" title="Logo"><h2>Logo</h2></a></div>
-        <p>Mô tả trang web. </p>
+        <div class="footer-logo"><a href="/" title="Logo"><img width="130" src="http://noithat.dev/templates/home/images/logo.png"/></a></div>
+        <p>Công ty cổ phần phát triển Duy Tân - Phân phối nội thất đồ gỗ phòng khách, phòng ngủ, khách sạn, văn phòng, giường, tủ, bàn, ghế, kệ, mẫu mã cực kỳ đa dạng. Đồ gỗ nội thất uy tín, giá cả hợp lý, Chất lượng dịch vụ hoàn hảo. </p>
 <!--         <div class="payment-accept">
           <div><img src="{$config.url}{$config.dirtemp}images/payment-1.png" alt="payment"> <img src="{$config.url}{$config.dirtemp}images/payment-2.png" alt="payment"> <img src="{$config.url}{$config.dirtemp}images/payment-3.png" alt="payment"> <img src="{$config.url}{$config.dirtemp}images/payment-4.png" alt="payment"></div>
         </div> -->
@@ -152,31 +154,39 @@
       <div class="col-md-3 col-sm-4">
         <h4>Sản phẩm</h4>
         <ul class="links">
-          <li class="first"><a href="#" title="Sản phẩm">Sản phẩm</a></li>
-          <li><a href="#" title="Sản phẩm">San pham</a></li>
-          <li class="last"><a href="#" title="Sản phẩm">Sản phẩm</a></li>
+        <li class="level0 parent drop-menu"><a href="#"><span>Đồ gỗ nội thất</span></a></li>
+        <li class="level0 parent drop-menu"><a href="http://noithat.dev/noi-that-phong-khach-1.html"><span>Nội thất phòng khách</span></a>
+        </li><li class="level0 parent drop-menu"><a href="http://noithat.dev/noi-that-phong-bep-4.html"><span>Nội Thất Phòng Bếp</span></a></li>
+        <li class="level0 parent drop-menu"><a href="http://noithat.dev/noi-that-phong-ngu-15.html"><span>Nội thất phòng ngủ</span></a> </li>
+        <li class="level0 parent drop-menu"><a href="http://noithat.dev/cau-thang-17.html"><span>Cầu thang</span></a></li>
+
         </ul>
       </div>
       
       <div class="col-md-3 col-sm-4">
         <h4>Liên kết</h4>
         <ul class="links">
-          <li><a href="#" title="Liên kết">Liên kết</a></li>
+          <li> <a title="tai game dien thoai" href="http://taigamedienthoai.pro/">tai game dien thoai</a> </li> 
+          <li>  <a title="tai game android" href="http://gameandroid.in/">tai game android</a> </li> 
+          <li>  <a title="ket qua xo so" href="http://www.mxoso.com/">ket qua xo so</a>  </li> 
+
+          <li>  <a href="http://quangcaophucvinh.com/" title="lam bien quang cao">lam bien quang cao</a></li> 
+  <li>  <a href="http://quangcaophucvinh.com/" title="lam bien quang cao">lam bien quang cao dep</a></li>
         </ul>
       </div>
       <div class="col-md-3 col-sm-4">
         <h4>Liên hệ</h4>
         <div class="contacts-info">
           <address>
-          <i class="add-icon">&nbsp;</i>Hà Nội<br/>Việt Nam
+          <i class="add-icon">&nbsp;</i>Số 5/530  Đường Láng <br/>  &nbsp;Đống Đa - Hà Nội
           </address>
           <div class="phone-footer"><i class="phone-icon">&nbsp;</i> 1900.1000</div>
-          <div class="email-footer"><i class="email-icon">&nbsp;</i> <a href="mailto:support@magikcommerce.com">dogo@gmail.com</a> </div>
+          <div class="email-footer"><i class="email-icon">&nbsp;</i> <a href="mailto:noithatdt.jsc@gmail.com">noithatdt.jsc@gmail.com</a> </div>
         </div>
       </div>
     </div>
     <div class="footer-bottom container">
-      <div class="col-sm-5 col-xs-12 coppyright"> &copy; 2015 . All Rights Reserved.</div>
+      <!-- <div class="col-sm-5 col-xs-12 coppyright"> &copy; 2015 . All Rights Reserved.</div> -->
     </div>
   </footer>
   <!-- End Footer --> 

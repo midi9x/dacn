@@ -1,7 +1,7 @@
-<?php /* Smarty version 3.1.27, created on 2015-12-11 19:56:30
+<?php /* Smarty version 3.1.27, created on 2015-12-20 20:13:18
          compiled from "C:\xampp\htdocs\dacn\templates\admin\khachhang.html" */ ?>
 <?php
-/*%%SmartyHeaderCode:24413566ac7fe049e67_40339506%%*/
+/*%%SmartyHeaderCode:202405676a96e3476c0_24638950%%*/
 if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
@@ -9,11 +9,11 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'c2dbcb90f83320602efd11c9309c4ad025c541a5' => 
     array (
       0 => 'C:\\xampp\\htdocs\\dacn\\templates\\admin\\khachhang.html',
-      1 => 1449838583,
+      1 => 1450617195,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '24413566ac7fe049e67_40339506',
+  'nocache_hash' => '202405676a96e3476c0_24638950',
   'variables' => 
   array (
     'config' => 0,
@@ -25,16 +25,16 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'has_nocache_code' => false,
   'version' => '3.1.27',
-  'unifunc' => 'content_566ac7ff2614f7_39935286',
+  'unifunc' => 'content_5676a96e3a9153_65373842',
 ),false);
 /*/%%SmartyHeaderCode%%*/
-if ($_valid && !is_callable('content_566ac7ff2614f7_39935286')) {
-function content_566ac7ff2614f7_39935286 ($_smarty_tpl) {
+if ($_valid && !is_callable('content_5676a96e3a9153_65373842')) {
+function content_5676a96e3a9153_65373842 ($_smarty_tpl) {
 
-$_smarty_tpl->properties['nocache_hash'] = '24413566ac7fe049e67_40339506';
+$_smarty_tpl->properties['nocache_hash'] = '202405676a96e3476c0_24638950';
 ?>
 <div class="row">
-    <div class="col-lg-8">
+    <div class="col-lg-12">
         <div class="page-header">
             <h3>
                 <ol class="breadcrumb">
@@ -49,13 +49,13 @@ admin/index.php">Home</a>
             </h3>
         </div>
     </div>
-    <div class="col-lg-4">
+    <!-- <div class="col-lg-4">
         <div class="page-header">
             <a href="<?php echo $_smarty_tpl->tpl_vars['config']->value['url'];?>
 admin/index.php?controller=nhanvien&action=them" class="btn btn-success"><i class="glyphicon glyphicon-plus"></i> Thêm mới </a> 
             <button onclick="return confirm('Bạn có muốn xóa');" type="button" class="btn btn-danger"><i class="glyphicon glyphicon-remove"></i> Khóa mục chọn</button>
         </div>
-    </div>
+    </div> -->
 
 </div>
 <!-- /.row -->
@@ -93,7 +93,7 @@ admin/index.php?controller=nhanvien&action=them" class="btn btn-success"><i clas
                         <th>Email</th>
                         <th>Phân loại</th>
                         <th>Tình trạng</th>
-                        <th width="200">Thao tác</th>
+                        <th>Thao tác</th>
                     </tr>
                 </thead>
 
@@ -128,9 +128,10 @@ $foreach_item_Sav = $_smarty_tpl->tpl_vars['item'];
                         <td>
                         <?php if ($_smarty_tpl->tpl_vars['item']->value['tinhTrang'] == 0) {?>Tạm khóa<?php } else { ?>Hoạt động<?php }?>
                         </td>
-                        <td colspan="2">
-                            <a href="#" class="btn btn-warning"><i class="glyphicon glyphicon-pencil"></i> Sửa </a>
-                            <a href="#" onclick="return confirm('Bạn có muốn xóa');" type="button" class="btn btn-danger"><i class="glyphicon glyphicon-remove"></i> Khóa</a>
+                        <td>
+                            <!-- <a href="#" class="btn btn-warning"><i class="glyphicon glyphicon-pencil"></i> Sửa </a> -->
+                            <a href="index.php?controller=khachhang&action=xoa&id=<?php echo $_smarty_tpl->tpl_vars['item']->value['id'];?>
+" onclick="return confirm('Bạn có muốn xóa');" type="button" class="btn btn-danger"><i class="glyphicon glyphicon-remove"></i> Khóa</a>
                         </td>
                     </tr>
 

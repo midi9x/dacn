@@ -21,7 +21,7 @@
     <div class="col-lg-6">
             <div class="input-group">
                 <span class="input-group-addon " id="basic-addon1">Tìm kiếm sản phẩm</span>
-                <input type="text" class="form-control" placeholder="Ví dụ: Giường ngủ" aria-describedby="basic-addon1" >
+                <input type="text" class="form-control" placeholder="Ví dụ: Giường ngủ" aria-describedby="basic-addon1" required/>
                 <span class="input-group-btn">
                     <button class="btn btn-primary" type="button"><i class="glyphicon glyphicon-search"></i>  Tìm</button>
                 </span>
@@ -66,7 +66,7 @@
             <table class="table table-bordered table-hover">
                 <thead>
                     <tr>
-                        
+                        <th>#</th>
                         <th>Tên sản phẩm</th>
                         <th>Hình ảnh</th>
                         <th>Đơn giá</th>
@@ -81,7 +81,7 @@
                 <tbody>
                 {foreach $danhsach as $item}
                     <tr>
-                        
+                        <td>{$item.id}</td>
                         <td>{$item.tenSP}</td>
                         <td><img src="{$item.hinhAnh}" width="46" alt="{$item.tenSP}" class="img-circle" /></td>
                         <td>{$item.donGia|number_format} VND</td>

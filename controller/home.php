@@ -1,5 +1,5 @@
 <?php
-$smarty->assign('title','Đồ gỗ nội thất');
+$smarty->assign('title','Nội thất Duy Tân | Đồ gỗ nội thất cao cấp ');
 //Chạy lệnh lấy về sản phẩm có type=1 (bán chạy)
 $banchay=$model->selectall('sanpham',6,'');
 $smarty->assign('banchay',$banchay);

@@ -1,7 +1,7 @@
-<?php /* Smarty version 3.1.27, created on 2015-12-08 10:21:02
+<?php /* Smarty version 3.1.27, created on 2015-12-20 12:15:41
          compiled from "C:\xampp\htdocs\dacn\templates\admin\themsanpham.html" */ ?>
 <?php
-/*%%SmartyHeaderCode:643756664c9e57b717_97167078%%*/
+/*%%SmartyHeaderCode:270035676397d297661_95937056%%*/
 if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
@@ -9,11 +9,11 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'd6f61b2e893f2212f313f7f94ede0f758189ec8e' => 
     array (
       0 => 'C:\\xampp\\htdocs\\dacn\\templates\\admin\\themsanpham.html',
-      1 => 1447572584,
+      1 => 1450588540,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '643756664c9e57b717_97167078',
+  'nocache_hash' => '270035676397d297661_95937056',
   'variables' => 
   array (
     'config' => 0,
@@ -23,13 +23,13 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'has_nocache_code' => false,
   'version' => '3.1.27',
-  'unifunc' => 'content_56664c9e636f42_17890294',
+  'unifunc' => 'content_5676397d2e96f0_92406343',
 ),false);
 /*/%%SmartyHeaderCode%%*/
-if ($_valid && !is_callable('content_56664c9e636f42_17890294')) {
-function content_56664c9e636f42_17890294 ($_smarty_tpl) {
+if ($_valid && !is_callable('content_5676397d2e96f0_92406343')) {
+function content_5676397d2e96f0_92406343 ($_smarty_tpl) {
 
-$_smarty_tpl->properties['nocache_hash'] = '643756664c9e57b717_97167078';
+$_smarty_tpl->properties['nocache_hash'] = '270035676397d297661_95937056';
 ?>
 <div class="row">
     <div class="col-lg-12">
@@ -52,7 +52,7 @@ admin/index.php">Home</a>
   <div class="form-group">
     <label for="tenSP" class="col-sm-2 control-label">Tên sản phẩm <span class="required">*</span></label>
     <div class="col-sm-10">
-      <input type="text" class="form-control" name="tenSP" id="tenSP" placeholder="">
+      <input type="text" class="form-control" name="tenSP" id="tenSP" placeholder="" required>
     </div>
   </div>
 
@@ -86,19 +86,19 @@ $_smarty_tpl->tpl_vars['row'] = $foreach_row_Sav;
   <div class="form-group">
     <label for="hinhAnh" class="col-sm-2 control-label">Ảnh đại diện <span class="required">*</span></label>
     <div class="col-sm-10">
-      <input class="form-control" name="hinhAnh" id="hinhAnh" type="file" />
+      <input class="form-control" name="hinhAnh" id="hinhAnh" type="file" required/>
     </div>
   </div>
 
   <div class="form-group">
     <label for="donGia" class="col-sm-2 control-label">Đơn giá <span class="required">*</span></label>
     <div class="col-sm-4">
-      <input type="number" class="form-control" name="donGia" id="donGia" placeholder="">
+      <input type="number" class="form-control" name="donGia" id="donGia" placeholder="" required/> 
     </div>
 
     <label for="soLuong" class="col-sm-2 control-label">Số lượng <span class="required">*</span></label>
     <div class="col-sm-4 ">
-      <input type="number" class="form-control" name="soLuong" id="soLuong" placeholder="">
+      <input type="number" class="form-control" name="soLuong" id="soLuong" placeholder="" required>
     </div>
   </div>
 
@@ -129,17 +129,26 @@ $_smarty_tpl->tpl_vars['row'] = $foreach_row_Sav;
   <div class="form-group">
     <label for="moTa" class="col-sm-2 control-label">Mô tả sản phẩm <span class="required">*</span></label>
     <div class="col-sm-10">
-      <textarea class="form-control" name="moTa" id="moTa" rows="3" placeholder=""></textarea>
+      <textarea required class="form-control" name="moTa" id="moTa" rows="3" placeholder=""></textarea>
       <?php echo '<script'; ?>
 >CKEDITOR.replace('moTa'); <?php echo '</script'; ?>
 >
     </div>
   </div>
-
+  <?php echo '<script'; ?>
+ type="text/javascript">
+    $("form").submit( function() {
+        var messageLength = CKEDITOR.instances['moTa'].getData().replace(/<[^>]*>/gi, '').length;
+        if( !messageLength ) {
+            alert( 'Please enter a message' );
+        }
+    }
+<?php echo '</script'; ?>
+>
   <div class="form-group">
     <label for="tuKhoa" class="col-sm-2 control-label">Từ khóa <span class="required">*</span></label>
     <div class="col-sm-10">
-      <input type="text" class="form-control" name="tuKhoa" id="tuKhoa" placeholder="">
+      <input type="text" class="form-control" name="tuKhoa" id="tuKhoa" placeholder="" required>
     </div>
   </div>
   

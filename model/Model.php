@@ -116,6 +116,14 @@ class Model
 		//Chạy lệnh thêm mới
 		return $this->pdo->exec($strEdit);
 	}
+
+	function updatesl($id,$sl)
+	{
+		$strEdit="UPDATE  sanpham SET soLuong=soLuong-$sl WHERE id=$id ";
+		//Chạy lệnh thêm mới
+		return $this->pdo->exec($strEdit);
+	}
+
 	//Phương thức Xóa dữ liệu
 	function delete($table,$id)
 	{

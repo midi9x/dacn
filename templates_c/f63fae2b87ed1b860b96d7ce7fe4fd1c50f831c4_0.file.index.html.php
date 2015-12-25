@@ -1,7 +1,7 @@
-<?php /* Smarty version 3.1.27, created on 2015-12-14 05:41:56
+<?php /* Smarty version 3.1.27, created on 2015-12-24 15:41:41
          compiled from "templates\home\index.html" */ ?>
 <?php
-/*%%SmartyHeaderCode:20691566e4894dbba67_47516481%%*/
+/*%%SmartyHeaderCode:16441567c0425924063_94987804%%*/
 if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
@@ -9,11 +9,11 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'f63fae2b87ed1b860b96d7ce7fe4fd1c50f831c4' => 
     array (
       0 => 'templates\\home\\index.html',
-      1 => 1450068113,
+      1 => 1450968099,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '20691566e4894dbba67_47516481',
+  'nocache_hash' => '16441567c0425924063_94987804',
   'variables' => 
   array (
     'config' => 0,
@@ -26,24 +26,26 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'has_nocache_code' => false,
   'version' => '3.1.27',
-  'unifunc' => 'content_566e4894e92810_90208098',
+  'unifunc' => 'content_567c04259f3113_12683638',
 ),false);
 /*/%%SmartyHeaderCode%%*/
-if ($_valid && !is_callable('content_566e4894e92810_90208098')) {
-function content_566e4894e92810_90208098 ($_smarty_tpl) {
+if ($_valid && !is_callable('content_567c04259f3113_12683638')) {
+function content_567c04259f3113_12683638 ($_smarty_tpl) {
 
-$_smarty_tpl->properties['nocache_hash'] = '20691566e4894dbba67_47516481';
+$_smarty_tpl->properties['nocache_hash'] = '16441567c0425924063_94987804';
 ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="<?php echo $_smarty_tpl->tpl_vars['config']->value['url'];?>
+  <link rel="shortcut icon" href="<?php echo $_smarty_tpl->tpl_vars['config']->value['url'];?>
 favicon.ico" />
   <title><?php if (isset($_smarty_tpl->tpl_vars['title']->value)) {
 echo $_smarty_tpl->tpl_vars['title']->value;?>
- - Đồ gỗ nội thất<?php } else { ?>Đồ gỗ nội thất <?php }?></title>
+ <?php } else { ?>Nội thất Duy Tân | Đồ gỗ nội thất cao cấp <?php }?></title>
+  <meta name="description" content="Nội thất đồ gỗ phòng khách, phòng ngủ, khách sạn, văn phòng, giường, tủ, bàn, ghế, kệ, mẫu mã cực kỳ đa dạng. Đồ gỗ nội thất uy tín, giá cả hợp lý, Chất lượng dịch vụ hoàn hảo."/>
+  <meta name="keywords" content="Đồ gỗ nội thât, cơ sở sản xuất đồ gỗ, cơ sở sản xuất đồ mộc, co so do go, đồ gỗ, nội thất"/>
   <link rel="stylesheet" href="<?php echo $_smarty_tpl->tpl_vars['config']->value['url'];
 echo $_smarty_tpl->tpl_vars['config']->value['dirtemp'];?>
 css/bootstrap.min.css" type="text/css">
@@ -100,7 +102,7 @@ css/font-awesome.css" type="text/css">
           <a class="logo" title="Magento Commerce" href="<?php echo $_smarty_tpl->tpl_vars['config']->value['url'];?>
 "><img alt="/" src="<?php echo $_smarty_tpl->tpl_vars['config']->value['url'];
 echo $_smarty_tpl->tpl_vars['config']->value['dirtemp'];?>
-images/logo.png"></a> 
+images/logo.png" width="130"></a> 
           <!-- End Header Logo --> 
         </div>
         <div class="col-lg-7 col-sm-4 col-md-6 col-xs-12"> 
@@ -201,7 +203,7 @@ $_smarty_tpl->tpl_vars['row'] = $foreach_row_Sav;
         <a class="logo-small" title="Đồ gỗ nội thất" href="<?php echo $_smarty_tpl->tpl_vars['config']->value['url'];?>
 "><img alt="Đồ gỗ nội thất" src="<?php echo $_smarty_tpl->tpl_vars['config']->value['url'];
 echo $_smarty_tpl->tpl_vars['config']->value['dirtemp'];?>
-images/logo-small.png"></a>
+images/logo.png" width="75"></a>
         <ul id="nav" class="hidden-xs">
           <li class="level0 parent drop-menu">
           <a href="<?php echo $_smarty_tpl->tpl_vars['config']->value['url'];?>
@@ -224,8 +226,8 @@ echo $_smarty_tpl->getSubTemplate ($_smarty_tpl->tpl_vars['temp']->value, $_smar
    
     <div class="footer-middle container">
       <div class="col-md-3 col-sm-4">
-        <div class="footer-logo"><a href="/" title="Logo"><h2>Logo</h2></a></div>
-        <p>Mô tả trang web. </p>
+        <div class="footer-logo"><a href="/" title="Logo"><img width="130" src="http://noithat.dev/templates/home/images/logo.png"/></a></div>
+        <p>Công ty cổ phần phát triển Duy Tân - Phân phối nội thất đồ gỗ phòng khách, phòng ngủ, khách sạn, văn phòng, giường, tủ, bàn, ghế, kệ, mẫu mã cực kỳ đa dạng. Đồ gỗ nội thất uy tín, giá cả hợp lý, Chất lượng dịch vụ hoàn hảo. </p>
 <!--         <div class="payment-accept">
           <div><img src="<?php echo $_smarty_tpl->tpl_vars['config']->value['url'];
 echo $_smarty_tpl->tpl_vars['config']->value['dirtemp'];?>
@@ -241,31 +243,39 @@ images/payment-4.png" alt="payment"></div>
       <div class="col-md-3 col-sm-4">
         <h4>Sản phẩm</h4>
         <ul class="links">
-          <li class="first"><a href="#" title="Sản phẩm">Sản phẩm</a></li>
-          <li><a href="#" title="Sản phẩm">San pham</a></li>
-          <li class="last"><a href="#" title="Sản phẩm">Sản phẩm</a></li>
+        <li class="level0 parent drop-menu"><a href="#"><span>Đồ gỗ nội thất</span></a></li>
+        <li class="level0 parent drop-menu"><a href="http://noithat.dev/noi-that-phong-khach-1.html"><span>Nội thất phòng khách</span></a>
+        </li><li class="level0 parent drop-menu"><a href="http://noithat.dev/noi-that-phong-bep-4.html"><span>Nội Thất Phòng Bếp</span></a></li>
+        <li class="level0 parent drop-menu"><a href="http://noithat.dev/noi-that-phong-ngu-15.html"><span>Nội thất phòng ngủ</span></a> </li>
+        <li class="level0 parent drop-menu"><a href="http://noithat.dev/cau-thang-17.html"><span>Cầu thang</span></a></li>
+
         </ul>
       </div>
       
       <div class="col-md-3 col-sm-4">
         <h4>Liên kết</h4>
         <ul class="links">
-          <li><a href="#" title="Liên kết">Liên kết</a></li>
+          <li> <a title="tai game dien thoai" href="http://taigamedienthoai.pro/">tai game dien thoai</a> </li> 
+          <li>  <a title="tai game android" href="http://gameandroid.in/">tai game android</a> </li> 
+          <li>  <a title="ket qua xo so" href="http://www.mxoso.com/">ket qua xo so</a>  </li> 
+
+          <li>  <a href="http://quangcaophucvinh.com/" title="lam bien quang cao">lam bien quang cao</a></li> 
+  <li>  <a href="http://quangcaophucvinh.com/" title="lam bien quang cao">lam bien quang cao dep</a></li>
         </ul>
       </div>
       <div class="col-md-3 col-sm-4">
         <h4>Liên hệ</h4>
         <div class="contacts-info">
           <address>
-          <i class="add-icon">&nbsp;</i>Hà Nội<br/>Việt Nam
+          <i class="add-icon">&nbsp;</i>Số 5/530  Đường Láng <br/>  &nbsp;Đống Đa - Hà Nội
           </address>
           <div class="phone-footer"><i class="phone-icon">&nbsp;</i> 1900.1000</div>
-          <div class="email-footer"><i class="email-icon">&nbsp;</i> <a href="mailto:support@magikcommerce.com">dogo@gmail.com</a> </div>
+          <div class="email-footer"><i class="email-icon">&nbsp;</i> <a href="mailto:noithatdt.jsc@gmail.com">noithatdt.jsc@gmail.com</a> </div>
         </div>
       </div>
     </div>
     <div class="footer-bottom container">
-      <div class="col-sm-5 col-xs-12 coppyright"> &copy; 2015 . All Rights Reserved.</div>
+      <!-- <div class="col-sm-5 col-xs-12 coppyright"> &copy; 2015 . All Rights Reserved.</div> -->
     </div>
   </footer>
   <!-- End Footer --> 
